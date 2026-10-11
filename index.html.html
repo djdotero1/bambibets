@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>bambibet | Apuestas deportivas</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--or:#0a8f4e;--or2:#19c26a;--bg:#e8efea;--card:#fff;--ink:#1b1d24;--mut:#6b7080;--line:#e2e5ec;--grn:#0a7a43;--btn:#c8ff4a;--dk:#0c1f17;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:500 14px/1.35 Barlow,system-ui,sans-serif}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.cond{font-family:'Barlow Condensed','Arial Narrow',sans-serif}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:linear-gradient(90deg,#065f35,#0fae60)}
+.top{display:flex;align-items:center;gap:22px;padding:0 18px;height:64px;max-width:1500px;margin:auto}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:#fff}
+.logo svg{width:42px;height:42px}
+.logo b{font:italic 800 32px/1 'Barlow Condensed',sans-serif;letter-spacing:-.5px}
+.logo b i{font-style:inherit;color:#c8ff4a}
+nav{display:flex;gap:18px;height:100%;overflow-x:auto}
+nav a{display:flex;align-items:center;color:#fff;text-decoration:none;font-weight:600;font-size:13px;text-transform:uppercase;white-space:nowrap;border-bottom:4px solid transparent;margin-top:4px}
+nav a.on{border-color:#fff}
+nav em{font:700 9px Barlow;background:var(--dk);color:#6dff9c;padding:1px 5px;border-radius:4px;margin-left:5px;font-style:normal}
+.auth{margin-left:auto;display:flex;gap:10px;align-items:center}
+.ic{color:#fff;font-size:20px}
+.b{border:2px solid #fff;background:none;color:#fff;border-radius:8px;padding:8px 16px;font-weight:700;font-size:13px}
+.b.g{background:var(--btn);border-color:var(--btn);color:#0c1f17}
+.wrap{display:grid;grid-template-columns:200px minmax(0,1fr) 320px;max-width:1500px;margin:auto;align-items:start}
+.side{background:#fff;min-height:calc(100vh - 64px);position:sticky;top:64px}
+.side button{display:flex;gap:12px;align-items:center;width:100%;background:none;border:0;border-bottom:1px solid var(--line);padding:14px 14px;text-align:left;font-weight:500;font-size:14px}
+.side button:hover{background:#eefaf3}
+.side h4{margin:0;padding:16px 14px 6px;font:700 13px Barlow;text-transform:uppercase}
+.side .cp{border:0;padding:9px 14px;color:var(--mut)}
+main{padding:10px;min-width:0}
+.car{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:4px}
+.mc{position:relative;flex:none;width:340px;height:262px;border-radius:12px;overflow:hidden;background:#000;color:#fff;scroll-snap-align:start}
+.mc>svg.art{position:absolute;inset:0;width:100%;height:100%}
+.mc img.art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.mc .ov{position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.88) 78%)}
+.chip{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.6);border-radius:6px;padding:3px 9px;font-size:12px;font-weight:600}
+.chip.lv{background:#e8002d}
+.crest img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}.crest.ok{background:none!important;color:transparent}
+.bn{margin:0 0 10px;padding:9px 12px;border-radius:8px;background:#fff3cd;color:#5c4400;font-weight:600;font-size:13px}.bn.ok{background:#d9f5e5;color:#064d2a}.nq{color:var(--mut);font-size:12px;padding:8px 4px}.mc .nq{color:#fff}
+.mc .in{position:absolute;left:12px;right:12px;bottom:12px}
+.bb{display:inline-block;background:#c8ff4a;color:#0c1f17;font:italic 800 13px 'Barlow Condensed';padding:2px 8px;transform:skewX(-12deg);margin-bottom:6px}
+.tm{font:700 21px/1.15 'Barlow Condensed',sans-serif;text-transform:uppercase;display:flex;align-items:center;gap:7px}
+.crest{position:relative;display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;font:800 9px Barlow;color:#fff;flex:none}
+.ob{display:flex;gap:6px;margin-top:9px}
+.o{flex:1;display:flex;justify-content:space-between;background:#fff;color:var(--ink);border:2px solid transparent;border-radius:7px;padding:6px 10px;font-weight:500}
+.o b{color:var(--grn);font-size:15px}
+.o:hover{border-color:var(--or)}
+.o.sel{background:var(--or);color:#fff}.o.sel b{color:#fff}
+.pr{background:linear-gradient(135deg,#19c26a,#064d2a)}
+.pr .in{bottom:16px}
+.pr h3{font:italic 800 38px/.95 'Barlow Condensed';margin:0;text-transform:uppercase}
+.tiles{display:flex;gap:10px;margin:10px 0;overflow-x:auto}
+.tile{position:relative;flex:none;width:172px;height:120px;border-radius:12px;overflow:hidden;color:#fff;font-weight:700;font-size:13px}
+.tile svg{position:absolute;inset:0;width:100%;height:100%}
+.tile span{position:absolute;left:8px;bottom:8px;text-shadow:0 1px 3px #000}
+.sec{background:#fff;border-radius:12px;padding:14px;margin-top:6px}
+.sh{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.sh h2{margin:0;font:800 21px 'Barlow Condensed';text-transform:uppercase}
+.seg{display:flex;gap:6px}
+.seg button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:7px 14px;font-weight:600}
+.seg button.on{border-color:var(--or);color:var(--or)}
+.pills{display:flex;gap:8px;overflow-x:auto;margin:12px 0}
+.pills button{display:flex;gap:7px;align-items:center;border:1px solid var(--line);background:#fff;border-radius:99px;padding:8px 14px;white-space:nowrap;font-weight:600}
+.pills button.on{background:var(--or);color:#fff;border-color:var(--or)}
+.mr{display:grid;grid-template-columns:70px minmax(0,1fr) auto;gap:10px;align-items:center;padding:12px 4px;border-top:1px solid var(--line)}
+.mr .st{font-size:12px;color:var(--mut)}.mr .st b{display:block;color:#e8002d}
+.mr .tt div{display:flex;justify-content:space-between;gap:8px;font-weight:600;align-items:center}
+.mr .tt span{display:flex;gap:7px;align-items:center}
+.mr .tt em{font-style:normal;font-weight:700}
+.mr .ob{margin:0;width:330px}
+.mr .o{flex-direction:column;align-items:center;background:#f2f4f8;padding:4px 6px;gap:0}
+.mr .o small{font-size:11px;color:var(--mut)}
+.mr .o.sel small{color:#fff}
+.rp{padding:10px 10px 10px 0;position:sticky;top:64px}
+.bx{background:#fff;border-radius:12px;padding:14px;margin-bottom:10px}
+.bx h5{margin:0 0 10px;text-align:center;font:600 13px Barlow;text-transform:uppercase}
+.tabs{display:flex;background:#e8ecf5;border-radius:99px;padding:3px;margin-bottom:12px}
+.tabs button{flex:1;border:0;background:none;border-radius:99px;padding:6px;font-weight:600}
+.tabs .on{background:#fff}
+.em{text-align:center;color:var(--mut);padding:6px 0}
+.si{display:grid;grid-template-columns:1fr auto auto;gap:2px 8px;padding:8px 0;border-bottom:1px solid var(--line)}
+.si small{color:var(--mut);grid-column:1}.si b{color:var(--grn)}
+.si button{grid-row:1/3;grid-column:3;background:none;border:0;font-size:18px;color:var(--mut)}
+.mt{background:var(--dk);color:#fff;position:relative;overflow:hidden}
+.mt h3{margin:0 0 10px;font:700 17px Barlow}
+.mt label{display:block;font-size:12px;margin:10px 0 4px}
+.mt input{width:130px;border:1px solid #444;background:#fff;color:var(--ink);border-radius:8px;padding:10px;font:600 16px Barlow}
+.mt .go{width:100%;margin-top:14px;border:0;border-radius:8px;background:linear-gradient(180deg,var(--or2),var(--or));color:#06210f;padding:13px;font-weight:700;font-size:15px}
+.mt .go:disabled{opacity:.45}
+.mt svg{position:absolute;right:-8px;top:-8px;width:90px;opacity:.5}
+.mt .ok{color:#6dff9c;font-weight:600;margin-top:8px;text-align:center}
+footer{max-width:1500px;margin:6px auto;padding:16px 18px;color:var(--mut);font-size:12px}
+@media(max-width:1150px){.wrap{grid-template-columns:minmax(0,1fr) 300px}.side{display:none}.mr .ob{width:260px}}
+@media(max-width:800px){.wrap{grid-template-columns:minmax(0,1fr)}.rp{position:static;padding:0 10px}.top{gap:12px}.auth .ic{display:none}.mr{grid-template-columns:1fr}.mr .ob{width:100%}.mc{width:86%}nav{display:none}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#ffd9c2"/></linearGradient>
+<symbol id="deer" viewBox="0 0 64 64"><path d="M20 22C14 20 8 14 9 6M15 15c-4-1-6-4-6-8M44 22c6-2 12-8 11-16M49 15c4-1 6-4 6-8" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><path d="M18 24c4-3 9-4 14-4s10 1 14 4c1 8-1 14-5 20-3 5-6 8-9 10-3-2-6-5-9-10-4-6-6-12-5-20z" fill="currentColor"/><circle cx="25" cy="33" r="2.6" fill="#fff"/><circle cx="39" cy="33" r="2.6" fill="#fff"/><ellipse cx="32" cy="49" rx="4" ry="3" fill="#fff"/></symbol>
+<symbol id="pl" viewBox="0 0 120 170"><circle cx="58" cy="16" r="12" fill="#3a251c"/><path d="M36 31l38 2 12 42-16 6-5-24-8 30-28-8z" fill="currentColor"/><path d="M30 78l40 5-2 22-40-5z" fill="#101218"/><path d="M38 100l-8 38-16 16" stroke="#3a251c" stroke-width="11" fill="none" stroke-linecap="round"/><path d="M62 104l30 18 12 22" stroke="#3a251c" stroke-width="11" fill="none" stroke-linecap="round"/><path d="M46 36l-22 30M80 40l22-14" stroke="#3a251c" stroke-width="9" fill="none" stroke-linecap="round"/><ellipse cx="14" cy="156" rx="13" ry="6" fill="#111"/><ellipse cx="106" cy="148" rx="13" ry="6" fill="#111" transform="rotate(30 106 148)"/></symbol>
+</defs></svg>
+
+<header><div class="top">
+<a class="logo" href="#" aria-label="bambibet"><svg viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="url(#lg)"/><use href="#deer" x="4" y="5" width="56" height="56" style="color:#0a8f4e"/></svg><b>bambi<i>bet</i></b></a>
+<nav><a class="on" href="#">Apuestas deportivas</a><a href="#">Apuestas en vivo</a><a href="#">Casino</a><a href="#">Casino en vivo</a><a href="#">Virtuales</a><a href="#">Social<em>NUEVO</em></a></nav>
+<div class="auth"><span class="ic">🎁</span><span class="ic">🔍</span><span class="ic">⚙️</span><button class="b">REGISTRO</button><button class="b g">INGRESAR</button></div>
+</div></header>
+
+<div class="wrap">
+<aside class="side">
+<button>📅 Programación de Apuestas</button><button>🏆 Apuestas por los Campeones</button><button>⭐ Apuestas especiales</button><button>❤️ Los favoritos</button><button>🎯 Misiones</button><button>🥇 Torneos de Deportes</button><button>📱 iOS y Android</button><button>🎮 Virtuales</button><button>🔥 Win-Streak</button>
+<h4>Competencias favoritas</h4><button class="cp">LaLiga</button><button class="cp">Liga 1 Perú</button><button class="cp">Premier League</button>
+</aside>
+
+<main>
+<div class="bn" id="bn" hidden></div>
+<div class="car" id="car"></div>
+<div class="tiles" id="tiles"></div>
+<section class="sec">
+<div class="sh"><h2>Súmate a la acción</h2><div class="seg" id="seg"><button class="on" data-v="1">⚡ En vivo</button><button data-v="0">⏱ Próximos</button></div></div>
+<div class="pills" id="pills"></div>
+<div id="list"></div>
+</section>
+</main>
+
+<aside class="rp">
+<div class="bx"><h5>Mis apuestas</h5>
+<div class="tabs"><button class="on">Abiertas</button><button>Resueltas</button></div>
+<div id="slip"></div></div>
+<div class="bx mt"><svg viewBox="0 0 64 64"><use href="#deer" style="color:#19c26a"/></svg>
+<h3>Mentor de Apuestas</h3>
+<label for="st">Monto que deseas apostar (S/)</label><input id="st" type="number" min="1" value="30" inputmode="decimal">
+<label for="wn">Monto que deseas ganar (S/)</label><input id="wn" type="number" min="0" inputmode="decimal">
+<button class="go" id="go">Apostar</button><div class="ok" id="ok" role="status"></div></div>
+</aside>
+</div>
+<footer><b>+18</b> Juega con responsabilidad y solo con dinero que puedas permitirte perder. bambibet es un diseño conceptual de demostración; las apuestas son simuladas.</footer>
+
+<script>
+/* ===== CONFIGURACIÓN: pega tu clave de API-Football entre las comillas ===== */
+var API_KEY="PEGA_TU_CLAVE_AQUI";
+var API_URL="https://v3.football.api-sports.io";
+/* ============================================================================ */
+var $=function(i){return document.getElementById(i)};
+function scene(c1,c2,jc,flip,crowd){
+ var s='<svg class="art" viewBox="0 0 340 262" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g'+c1.slice(1)+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+c1+'"/><stop offset="1" stop-color="'+c2+'"/></linearGradient><radialGradient id="r'+c1.slice(1)+'"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs><rect width="340" height="262" fill="url(#g'+c1.slice(1)+')"/>';
+ s+='<circle cx="'+(flip?70:270)+'" cy="30" r="90" fill="url(#r'+c1.slice(1)+')"/><path d="M'+(flip?20:230)+' 0l50 0-90 170z" fill="#fff" opacity=".08"/>';
+ for(var i=0;i<46;i++){s+='<circle cx="'+((i*47)%340)+'" cy="'+(150+(i*13)%40)+'" r="'+(2+i%3)+'" fill="'+(crowd||'#000')+'" opacity=".35"/>'}
+ s+='<rect y="190" width="340" height="72" fill="#0e3b1f" opacity=".75"/><use href="#pl" x="'+(flip?150:60)+'" y="40" width="170" height="240" style="color:'+jc+'"'+(flip?' transform="translate(340 0) scale(-1 1)"':'')+'/><circle cx="'+(flip?96:236)+'" cy="205" r="10" fill="#fff"/><circle cx="'+(flip?96:236)+'" cy="205" r="10" fill="none" stroke="#222" stroke-width="2" stroke-dasharray="6 5"/></svg>';
+ return s}
+var Mx=[
+{id:1,s:"Fútbol",a:"Sport Boys",b:"Alianza Atlético",ca:["#e0314b","SB"],cb:["#223","AA"],t:"Hoy 15:30",o:[2.32,3.50,3.25],art:scene("#3a1b22","#150a0d","#c4202f",0),bb:1},
+{id:2,s:"Fútbol",a:"Cusco FC",b:"Alianza Lima",ca:["#d02a2a","CF"],cb:["#14307a","AL"],t:"Hoy 18:30",o:[2.27,3.20,3.25],art:scene("#0f3d2e","#04140e","#e53030",1,"#ff5a3c"),bb:1},
+{id:3,s:"Fútbol",a:"Cagliari",b:"Juventus",ca:["#b0172d","CA"],cb:["#111","JU"],t:"67'",live:1,sc:[1,0],o:[1.44,3.55,11],art:scene("#2a2a30","#0b0b0e","#f1f1f1",0)},
+{id:4,s:"Tenis",a:"C. Alcaraz",b:"J. Sinner",ca:["#e8b400","CA"],cb:["#2a7de1","JS"],t:"2.º set",live:1,sc:[1,0],o:[1.95,null,1.85]},
+{id:5,s:"Básquet",a:"Lakers",b:"Celtics",ca:["#6b3fa0","LA"],cb:["#118a45","BO"],t:"Q3 04:12",live:1,sc:[78,81],o:[2.60,null,1.52]},
+{id:6,s:"Fútbol",a:"Universitario",b:"Sporting Cristal",ca:["#b88a00","UN"],cb:["#2aa1e0","SC"],t:"Sáb 18:00",o:[2.20,3.15,3.30]},
+{id:7,s:"Fútbol",a:"Real Madrid",b:"Barcelona",ca:["#ccc","RM"],cb:["#a01d4d","FB"],t:"Dom 15:00",o:[2.35,3.60,2.80]},
+{id:8,s:"Esports",a:"T1",b:"Gen.G",ca:["#e0302b","T1"],cb:["#b8860b","GG"],t:"Dom 09:00",o:[2.05,null,1.75]},
+{id:9,s:"Voleibol",a:"Brasil",b:"Polonia",ca:["#1c9a3f","BR"],cb:["#d33","PL"],t:"Dom 16:00",live:1,sc:[2,1],o:[1.70,null,2.10]}
+];
+var pills=["Popular","Fútbol","Básquetbol","Tenis","Esports","Voleibol"],ico={Popular:"⠿",Fútbol:"⚽",Básquetbol:"🏀",Tenis:"🎾",Esports:"🎮",Voleibol:"🏐"};
+/* IMÁGENES: sube tus fotos a la carpeta img/ de tu repo y pon aquí la ruta de cada partido (id:ruta) */
+var IMG={1:"img/partido1.jpg",2:"img/partido2.jpg",3:"img/partido3.jpg"};
+var cur="Popular",live=1,picks={},lab=["1","X","2"];
+/* ESCUDOS: guarda cada escudo en img/escudos/nombre-del-equipo.png (minúsculas, sin tildes, con guiones). Si no existe, se muestran las iniciales. */
+function slug(n){return n.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
+function cr(c,n,lg){return '<span class="crest" style="background:'+c[0]+'">'+c[1]+'<img src="'+(lg||'img/escudos/'+slug(n)+'.png')+'" alt="" onload="this.parentNode.classList.add(\'ok\')" onerror="this.remove()"></span>'}
+function ob(m,small){if(m.o.every(function(q){return q===null}))return '<div class="ob"><span class="nq">Cuotas no disponibles</span></div>';return '<div class="ob">'+m.o.map(function(q,i){if(q===null)return '<span style="flex:1"></span>';var on=picks[m.id]===i;return '<button class="o'+(on?' sel':'')+'" data-m="'+m.id+'" data-i="'+i+'" aria-pressed="'+on+'">'+(small?'<small>'+lab[i]+'</small>':'<span>'+lab[i]+'</span>')+'<b>'+q.toFixed(2)+'</b></button>'}).join('')+'</div>'}
+function car(){
+ var h=Mx.filter(function(m){return m.art}).map(function(m){return '<div class="mc">'+m.art+(IMG[m.id]?'<img class="art" src="'+IMG[m.id]+'" alt="'+m.a+' vs '+m.b+'" onerror="this.remove()">':'')+'<div class="ov"></div><span class="chip">▶ '+m.t+'</span><div class="in">'+(m.bb?'<span class="bb">⚡ BAMBI BOOST 25%</span>':'')+'<div class="tm">'+cr(m.ca,m.a,m.la)+m.a+'</div><div class="tm">'+cr(m.cb,m.b,m.lb)+m.b+'</div>'+ob(m)+'</div></div>'}).join('');
+ h+='<div class="mc pr"><svg class="art" viewBox="0 0 340 262" preserveAspectRatio="xMidYMid slice">'+(function(){var s='<circle cx="270" cy="60" r="120" fill="#fff" opacity=".12"/>';for(var i=0;i<60;i++)s+='<circle cx="'+((i*37)%340)+'" cy="'+(130+(i*17)%130)+'" r="'+(5+i%6)+'" fill="'+(i%3?'#c8ff4a':'#fff')+'" opacity=".55"/>';return s})()+'<use href="#deer" x="170" y="20" width="170" height="170" style="color:#fff" opacity=".9"/></svg><div class="in"><h3>Juega y mira<br>el torneo<br>en bambibet</h3></div></div>';
+ $("car").innerHTML=h}
+function tiles(){
+ var T=[["#0a8f4e","#064d2a","¡Misión combinada!",'<path d="M0 90l172-40v70H0z" fill="#fff" opacity=".2"/><circle cx="120" cy="40" r="22" fill="none" stroke="#fff" stroke-width="5"/><circle cx="120" cy="40" r="8" fill="#fff"/>'],
+ ["#0c1f17","#1b6b45","30 Giros con Playson",'<circle cx="86" cy="50" r="46" fill="none" stroke="#c8ff4a" stroke-width="6" stroke-dasharray="3 7"/><rect x="46" y="34" width="80" height="34" rx="5" fill="#fff"/><text x="54" y="60" font-size="26" font-weight="800" fill="#0a8f4e">777</text>'],
+ ["#0e7c66","#8be04e","¡Regístrate y gana!",'<circle cx="86" cy="50" r="34" fill="#fff"/><circle cx="86" cy="50" r="20" fill="#0a8f4e"/><circle cx="86" cy="50" r="8" fill="#fff"/>'],
+ ["#0c1f17","#12372a","¡Cajas Sorpresa!",'<g fill="#19c26a"><rect x="30" y="34" width="38" height="38" rx="4"/><rect x="76" y="26" width="38" height="38" rx="4"/><rect x="122" y="36" width="38" height="38" rx="4"/></g><g fill="#fff" font-weight="800" font-size="22"><text x="42" y="62">?</text><text x="88" y="54">?</text><text x="134" y="64">?</text></g>'],
+ ["#0b3d2e","#19c26a","¡Torneo de S/50,000!",'<path d="M64 20h44v26c0 16-10 26-22 26S64 62 64 46z" fill="#ffd23f"/><rect x="78" y="72" width="16" height="14" fill="#ffd23f"/><rect x="68" y="86" width="36" height="8" rx="3" fill="#ffd23f"/>']];
+ $("tiles").innerHTML=T.map(function(t,i){return '<div class="tile"><svg viewBox="0 0 172 120" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="t'+i+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="'+t[0]+'"/><stop offset="1" stop-color="'+t[1]+'"/></linearGradient></defs><rect width="172" height="120" fill="url(#t'+i+')"/>'+t[3]+'</svg><span>'+t[2]+'</span></div>'}).join('')}
+function list(){
+ $("pills").innerHTML=pills.map(function(p){return '<button data-p="'+p+'" class="'+(p==cur?'on':'')+'">'+ico[p]+' '+p+'</button>'}).join('');
+ var L=Mx.filter(function(m){return !!m.live==!!live&&(cur=="Popular"||m.s==cur||(cur=="Básquetbol"&&m.s=="Básquet"))});
+ $("list").innerHTML=L.length?L.map(function(m){return '<div class="mr"><div class="st">'+(m.live?'<b>⚡ EN VIVO</b>':'')+m.t+'</div><div class="tt"><div><span>'+cr(m.ca,m.a,m.la)+m.a+'</span>'+(m.sc?'<em>'+m.sc[0]+'</em>':'')+'</div><div><span>'+cr(m.cb,m.b,m.lb)+m.b+'</span>'+(m.sc?'<em>'+m.sc[1]+'</em>':'')+'</div></div>'+ob(m,1)+'</div>'}).join(''):'<p class="em">No hay partidos en esta categoría ahora. Prueba con otro deporte.</p>'}
+function slip(){
+ var ids=Object.keys(picks),tq=1;
+ $("slip").innerHTML=ids.length?ids.map(function(id){var m=Mx.filter(function(x){return x.id==id})[0],i=picks[id];tq*=m.o[i];return '<div class="si"><span>'+(i==1?"Empate":i==0?m.a:m.b)+'</span><b>'+m.o[i].toFixed(2)+'</b><small>Resultado final · '+m.a+' vs '+m.b+'</small><button data-x="'+id+'" aria-label="Quitar selección">×</button></div>'}).join('')+'<p class="em">Cuota total: <b>'+tq.toFixed(2)+'</b></p>':'<p class="em">No tienes apuestas abiertas en este momento</p>';
+ window.TQ=ids.length?tq:0;
+ var st=parseFloat($("st").value)||0;$("wn").value=TQ?(st*TQ).toFixed(2):"";
+ $("go").disabled=!TQ||st<1}
+function all(){car();list();slip()}
+document.addEventListener("click",function(e){
+ var t=e.target.closest("button");if(!t)return;
+ if(t.dataset.m){var id=t.dataset.m,i=+t.dataset.i;if(picks[id]===i)delete picks[id];else picks[id]=i;$("ok").textContent="";all()}
+ else if(t.dataset.x){delete picks[t.dataset.x];all()}
+ else if(t.dataset.p){cur=t.dataset.p;list()}
+ else if(t.closest("#seg")){live=+t.dataset.v;document.querySelectorAll("#seg button").forEach(function(b){b.classList.toggle("on",b==t)});list()}
+ else if(t.id=="go"){var n=Object.keys(picks).length;picks={};all();$("ok").textContent="¡Apuesta realizada! "+n+" selección"+(n>1?"es":"")+". Mucha suerte."}
+});
+$("st").addEventListener("input",slip);
+$("wn").addEventListener("input",function(){var w=parseFloat($("wn").value)||0;if(TQ)$("st").value=(w/TQ).toFixed(2);$("go").disabled=!TQ||(parseFloat($("st").value)||0)<1});
+
+/* ===== CONEXIÓN CON API-FOOTBALL ===== */
+var DEMO=Mx.slice();
+function banner(t,ok){var b=$("bn");b.hidden=!t;b.textContent=t||"";b.className="bn"+(ok?" ok":"")}
+async function api(path){
+ var r=await fetch(API_URL+path,{headers:{"x-apisports-key":API_KEY}});
+ var left=r.headers.get("x-ratelimit-requests-remaining");
+ var j=await r.json(),e=j.errors;
+ var msg=Array.isArray(e)?e[0]:(e&&Object.keys(e).length?Object.values(e)[0]:null);
+ if(msg)throw new Error(msg);
+ j.left=left;return j}
+function hora(d){return "Hoy "+new Date(d).toLocaleTimeString("es-PE",{hour:"2-digit",minute:"2-digit"})}
+function aplicar(fx,od,left,cache){
+ var L=["1H","HT","2H","ET","BT","P","LIVE","INT"];
+ var arts=[scene("#0f3d2e","#04140e","#19c26a",0),scene("#2a2a30","#0b0b0e","#f1f1f1",1),scene("#3a1b22","#150a0d","#c4202f",0)];
+ Mx=fx.filter(function(f){return L.indexOf(f.st)>-1||f.st=="NS"}).map(function(f){var lv=L.indexOf(f.st)>-1;
+  return {id:f.id,s:"Fútbol",lg:f.lg,a:f.a,b:f.b,la:f.la,lb:f.lb,ca:["#4b5563",f.a.slice(0,2).toUpperCase()],cb:["#4b5563",f.b.slice(0,2).toUpperCase()],t:lv?(f.el!=null?f.el+"'":"En vivo"):hora(f.date),live:lv?1:0,sc:lv?[f.ga||0,f.gb||0]:null,o:od[f.id]||[null,null,null]}});
+ Mx.sort(function(x,y){return (y.live-x.live)||((y.o[0]!=null)-(x.o[0]!=null))});
+ Mx.filter(function(m){return m.o[0]!=null}).slice(0,3).forEach(function(m,i){m.art=arts[i]});
+ picks={};pills=["Popular","Fútbol"];cur="Popular";
+ live=Mx.some(function(m){return m.live})?1:0;
+ document.querySelectorAll("#seg button").forEach(function(b){b.classList.toggle("on",+b.dataset.v==live)});
+ all();
+ banner("Datos reales de API-Football · "+Mx.length+" partidos"+(left?" · consultas restantes hoy: "+left:"")+(cache?" · guardados hace menos de 10 min":""),1)}
+async function cargarAPI(){
+ if(!API_KEY||API_KEY.indexOf("PEGA")==0){banner("Modo demostración: pega tu clave en la línea API_KEY (al inicio del script) para ver partidos reales.");return}
+ var key="bb_cache_v1",c=null;
+ try{c=JSON.parse(localStorage.getItem(key)||"null")}catch(e){}
+ if(c&&Date.now()-c.ts<600000&&c.k==API_KEY.slice(-6)){aplicar(c.fx,c.od,c.left,1);return}
+ banner("Cargando partidos reales…",1);
+ try{
+  var hoy=new Date().toLocaleDateString("en-CA"),tz="&timezone=America/Lima";
+  var a=await api("/fixtures?live=all"+tz),b=await api("/fixtures?date="+hoy+tz),left=b.left;
+  var ids={},fx=[];
+  a.response.concat(b.response).forEach(function(f){if(ids[f.fixture.id])return;ids[f.fixture.id]=1;
+   fx.push({id:f.fixture.id,a:f.teams.home.name,b:f.teams.away.name,la:f.teams.home.logo,lb:f.teams.away.logo,lg:f.league.name,st:f.fixture.status.short,el:f.fixture.status.elapsed,date:f.fixture.date,ga:f.goals.home,gb:f.goals.away})});
+  var od={};
+  for(var p=1;p<=2;p++){
+   var o=await api("/odds?date="+hoy+"&bet=1&page="+p);left=o.left||left;
+   o.response.forEach(function(x){var bk=x.bookmakers&&x.bookmakers[0],bt=bk&&bk.bets.filter(function(t){return t.id==1})[0];
+    if(bt){var v={};bt.values.forEach(function(y){v[y.value]=parseFloat(y.odd)});od[x.fixture.id]=[v.Home||null,v.Draw||null,v.Away||null]}});
+   if(!o.paging||o.paging.current>=o.paging.total)break}
+  try{localStorage.setItem(key,JSON.stringify({ts:Date.now(),k:API_KEY.slice(-6),fx:fx,od:od,left:left}))}catch(e){}
+  aplicar(fx,od,left,0)
+ }catch(e){banner("No se pudo cargar datos reales: "+(e.name=="TypeError"?"sin conexión o el navegador bloqueó la llamada (CORS)":e.message)+". Mostrando datos de ejemplo.")}}
+car();tiles();list();slip();cargarAPI();
+</script></body></html>

@@ -1,148 +1,404 @@
 <!DOCTYPE html>
 <html lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="only light">
+<script>try{if(localStorage.getItem("bb_th")=="d")document.documentElement.dataset.th="d"}catch(e){}</script>
 <title>bambibet | Apuestas deportivas</title>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--or:#0a8f4e;--or2:#19c26a;--bg:#e8efea;--card:#fff;--ink:#1b1d24;--mut:#6b7080;--line:#e2e5ec;--grn:#0a7a43;--btn:#c8ff4a;--dk:#0c1f17;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{--bg:#fff;--pk:#ff2e93;--pk2:#ffe6f2;--p2:#f3f3f0;--ln:#e3e3df;--tx:#0b0b0b;--mu:#6b6b66;--red:#e5173f;color-scheme:only light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *,*::before,*::after{box-sizing:inherit}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--bg);color:var(--ink);font:500 14px/1.35 Barlow,system-ui,sans-serif}
+[hidden]{display:none!important}
+html{scroll-padding-top:calc(84px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font:500 14px/1.4 Outfit,system-ui,sans-serif}
 button{font:inherit;color:inherit;cursor:pointer}
-:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
-.cond{font-family:'Barlow Condensed','Arial Narrow',sans-serif}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:linear-gradient(90deg,#065f35,#0fae60)}
-.top{display:flex;align-items:center;gap:22px;padding:0 18px;height:64px;max-width:1500px;margin:auto}
-.logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:#fff}
-.logo svg{width:42px;height:42px}
-.logo b{font:italic 800 32px/1 'Barlow Condensed',sans-serif;letter-spacing:-.5px}
-.logo b i{font-style:inherit;color:#c8ff4a}
-nav{display:flex;gap:18px;height:100%;overflow-x:auto}
-nav a{display:flex;align-items:center;color:#fff;text-decoration:none;font-weight:600;font-size:13px;text-transform:uppercase;white-space:nowrap;border-bottom:4px solid transparent;margin-top:4px}
-nav a.on{border-color:#fff}
-nav em{font:700 9px Barlow;background:var(--dk);color:#6dff9c;padding:1px 5px;border-radius:4px;margin-left:5px;font-style:normal}
-.auth{margin-left:auto;display:flex;gap:10px;align-items:center}
-.ic{color:#fff;font-size:20px}
-.b{border:2px solid #fff;background:none;color:#fff;border-radius:8px;padding:8px 16px;font-weight:700;font-size:13px}
-.b.g{background:var(--btn);border-color:var(--btn);color:#0c1f17}
-.wrap{display:grid;grid-template-columns:200px minmax(0,1fr) 320px;max-width:1500px;margin:auto;align-items:start}
-.side{background:#fff;min-height:calc(100vh - 64px);position:sticky;top:64px}
-.side button{display:flex;gap:12px;align-items:center;width:100%;background:none;border:0;border-bottom:1px solid var(--line);padding:14px 14px;text-align:left;font-weight:500;font-size:14px}
-.side button:hover{background:#eefaf3}
-.side h4{margin:0;padding:16px 14px 6px;font:700 13px Barlow;text-transform:uppercase}
-.side .cp{border:0;padding:9px 14px;color:var(--mut)}
-main{padding:10px;min-width:0}
-.car{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:4px}
-.mc{position:relative;flex:none;width:340px;height:262px;border-radius:12px;overflow:hidden;background:#000;color:#fff;scroll-snap-align:start}
-.mc>svg.art{position:absolute;inset:0;width:100%;height:100%}
-.mc img.art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.mc .ov{position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.88) 78%)}
-.chip{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.6);border-radius:6px;padding:3px 9px;font-size:12px;font-weight:600}
-.chip.lv{background:#e8002d}
-.crest img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}.crest.ok{background:none!important;color:transparent}
-.bn{margin:0 0 10px;padding:9px 12px;border-radius:8px;background:#fff3cd;color:#5c4400;font-weight:600;font-size:13px}.bn.ok{background:#d9f5e5;color:#064d2a}.nq{color:var(--mut);font-size:12px;padding:8px 4px}.mc .nq{color:#fff}
+:focus-visible{outline:2px solid var(--tx);outline-offset:2px}
+h1,h2,h3{font-family:Unbounded,'Arial Black',sans-serif;margin:0}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;margin:10px 14px 0;border:2px solid var(--tx);border-radius:18px;background:var(--bg);box-shadow:4px 4px 0 var(--pk)}
+.top{display:flex;align-items:center;gap:16px;padding:8px 14px;max-width:1500px;margin:auto}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--tx)}
+.logo svg{width:40px;height:40px}
+.logo b{font:900 22px/1 Unbounded,sans-serif;letter-spacing:-1px}
+.logo b i{font-style:normal;background:var(--pk);color:#0b0b0b;padding:3px 7px;border-radius:8px;margin-left:3px}
+nav{display:flex;gap:4px;overflow-x:auto}
+.tnav a{padding:8px 16px;border-radius:99px;color:var(--mu);text-decoration:none;font-weight:600;white-space:nowrap}
+.tnav a:hover{color:var(--tx);background:var(--p2)}
+.tnav a.on{background:var(--tx);color:var(--bg)}
+.auth{margin-left:auto;display:flex;gap:8px;align-items:center}
+#gear{background:none;border:0;font-size:20px}
+.lvc{display:flex;flex-direction:column;gap:4px;min-width:150px;font-size:12px;text-decoration:none;color:var(--tx);padding:5px 12px;border-radius:12px;background:var(--p2)}
+.lvc i,.ms i{display:block;height:6px;border-radius:9px;background:var(--ln);overflow:hidden}
+.lvc u,.ms u{display:block;height:100%;border-radius:9px;background:var(--pk);transition:width .8s}
+.b{border:1.5px solid var(--tx);background:var(--bg);border-radius:99px;padding:8px 16px;font-weight:700}
+.b.g{background:var(--pk);color:#0b0b0b}
+.wrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;max-width:1500px;margin:auto;padding:16px 14px}
+main{min-width:0}
+.vw{display:flex;flex-direction:column;gap:20px}
+.card,.sec,.bx{background:var(--bg);border:1.5px solid var(--ln);border-radius:20px;padding:16px}
+.sh{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.sh h2,.card h2{font-size:17px;font-weight:800}
+.cnt{font:600 12px Outfit;background:var(--pk2);padding:2px 9px;border-radius:99px;margin-left:6px;vertical-align:middle}
+.dotl{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--red);margin-right:8px;animation:bl 1.1s infinite}
+#lt,.mu{color:var(--mu)}
+.trk{position:relative;margin-top:16px;overflow-x:auto;padding-bottom:4px}
+.line{position:absolute;left:10%;right:10%;top:23px;height:4px;border-radius:4px;background:var(--ln)}
+.line u{display:block;height:100%;width:0;border-radius:4px;background:var(--pk);transition:width 1s}
+#lad{list-style:none;margin:0;padding:0;display:flex;min-width:640px;position:relative}
+.nd{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;text-align:center;padding:0 6px}
+.dot{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font:800 16px Unbounded;background:var(--bg);border:2px solid var(--ln);color:var(--mu)}
+.nd.ok .dot{background:var(--pk);border-color:var(--tx);color:#0b0b0b}
+.nd.cur .dot{border:3px solid var(--tx);color:var(--tx);background:var(--pk2)}
+.nd.lock{opacity:.55}
+.nd b{font:700 13px Unbounded;margin-top:6px}.nd small{color:var(--mu)}.nd em{font-style:normal;font-size:12px;max-width:150px}
+.card>small{display:block;margin-top:10px;color:var(--mu)}
+.car{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:4px}
+.mc{position:relative;flex:none;width:340px;height:262px;border-radius:20px;overflow:hidden;background:#000;color:#fff;scroll-snap-align:start}
+.mc>svg.art,.mc img.art{position:absolute;inset:0;width:100%;height:100%}
+.mc img.art{object-fit:cover}
+.mc .ov{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,#000e 85%)}
+.chip{position:absolute;top:10px;left:10px;background:#000a;border:1px solid #fff4;border-radius:99px;padding:3px 10px;font-size:12px;font-weight:600}
+.chip.lv{background:var(--red);border-color:var(--red);color:#fff;display:flex;align-items:center;gap:6px}
 .mc .in{position:absolute;left:12px;right:12px;bottom:12px}
-.bb{display:inline-block;background:#c8ff4a;color:#0c1f17;font:italic 800 13px 'Barlow Condensed';padding:2px 8px;transform:skewX(-12deg);margin-bottom:6px}
-.tm{font:700 21px/1.15 'Barlow Condensed',sans-serif;text-transform:uppercase;display:flex;align-items:center;gap:7px}
-.crest{position:relative;display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;font:800 9px Barlow;color:#fff;flex:none}
+.bb{display:inline-block;background:var(--pk);color:#0b0b0b;font-weight:800;padding:2px 10px;border-radius:99px;font-size:12px;margin-bottom:6px}
+.tm{display:flex;gap:7px;align-items:center;font:800 14px/1.35 Unbounded,sans-serif}
+.crest{position:relative;display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;font:800 9px Outfit;color:#fff;flex:none}
+.crest img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.crest.ok{background:none!important;color:transparent}
 .ob{display:flex;gap:6px;margin-top:9px}
-.o{flex:1;display:flex;justify-content:space-between;background:#fff;color:var(--ink);border:2px solid transparent;border-radius:7px;padding:6px 10px;font-weight:500}
-.o b{color:var(--grn);font-size:15px}
-.o:hover{border-color:var(--or)}
-.o.sel{background:var(--or);color:#fff}.o.sel b{color:#fff}
-.pr{background:linear-gradient(135deg,#19c26a,#064d2a)}
-.pr .in{bottom:16px}
-.pr h3{font:italic 800 38px/.95 'Barlow Condensed';margin:0;text-transform:uppercase}
-.tiles{display:flex;gap:10px;margin:10px 0;overflow-x:auto}
-.tile{position:relative;flex:none;width:172px;height:120px;border-radius:12px;overflow:hidden;color:#fff;font-weight:700;font-size:13px}
-.tile svg{position:absolute;inset:0;width:100%;height:100%}
-.tile span{position:absolute;left:8px;bottom:8px;text-shadow:0 1px 3px #000}
-.sec{background:#fff;border-radius:12px;padding:14px;margin-top:6px}
-.sh{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
-.sh h2{margin:0;font:800 21px 'Barlow Condensed';text-transform:uppercase}
-.seg{display:flex;gap:6px}
-.seg button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:7px 14px;font-weight:600}
-.seg button.on{border-color:var(--or);color:var(--or)}
+.o{flex:1;display:flex;justify-content:space-between;align-items:center;background:var(--bg);color:var(--tx);border:1.5px solid transparent;border-radius:10px;padding:7px 10px}
+.o b{font-size:15px;font-weight:700}
+.o:hover{border-color:var(--tx)}
+.o.sel{background:var(--pk);color:#0b0b0b;border-color:#fff}
+.o.sel b,.o.sel small{color:#0b0b0b}
+.pr{background:linear-gradient(135deg,#0b0b0b,#ff2e93)}
+.pr h3{font-size:24px;line-height:1.1}
+.nq{color:var(--mu);font-size:12px;padding:8px 4px}.mc .nq{color:#fff}
 .pills{display:flex;gap:8px;overflow-x:auto;margin:12px 0}
-.pills button{display:flex;gap:7px;align-items:center;border:1px solid var(--line);background:#fff;border-radius:99px;padding:8px 14px;white-space:nowrap;font-weight:600}
-.pills button.on{background:var(--or);color:#fff;border-color:var(--or)}
-.mr{display:grid;grid-template-columns:70px minmax(0,1fr) auto;gap:10px;align-items:center;padding:12px 4px;border-top:1px solid var(--line)}
-.mr .st{font-size:12px;color:var(--mut)}.mr .st b{display:block;color:#e8002d}
-.mr .tt div{display:flex;justify-content:space-between;gap:8px;font-weight:600;align-items:center}
-.mr .tt span{display:flex;gap:7px;align-items:center}
-.mr .tt em{font-style:normal;font-weight:700}
+.pills button{border:1.5px solid var(--ln);background:var(--bg);border-radius:99px;padding:7px 14px;font-weight:600;white-space:nowrap}
+.pills button.on{background:var(--pk);color:#0b0b0b;border-color:var(--tx)}
+.ox{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 10px}
+.ox select{padding:8px 10px;border:1.5px solid var(--ln);border-radius:10px;font:inherit;background:var(--bg)}
+.ox .ld{background:var(--pk);color:#0b0b0b;border:0;border-radius:99px;padding:9px 16px;font-weight:700}
+.ox small{color:var(--mu)}
+.mr{display:grid;grid-template-columns:78px minmax(0,1fr) auto;gap:10px;align-items:center;padding:12px 4px;border-top:1px solid var(--ln)}
+.st{font-size:12px;color:var(--mu)}.st b{display:block;color:var(--red)}
+.tt div{display:flex;justify-content:space-between;gap:8px;font-weight:600;align-items:center}
+.tt span{display:flex;gap:7px;align-items:center}.tt em{font-style:normal;font-weight:800}
 .mr .ob{margin:0;width:330px}
-.mr .o{flex-direction:column;align-items:center;background:#f2f4f8;padding:4px 6px;gap:0}
-.mr .o small{font-size:11px;color:var(--mut)}
-.mr .o.sel small{color:#fff}
-.rp{padding:10px 10px 10px 0;position:sticky;top:64px}
-.bx{background:#fff;border-radius:12px;padding:14px;margin-bottom:10px}
-.bx h5{margin:0 0 10px;text-align:center;font:600 13px Barlow;text-transform:uppercase}
-.tabs{display:flex;background:#e8ecf5;border-radius:99px;padding:3px;margin-bottom:12px}
-.tabs button{flex:1;border:0;background:none;border-radius:99px;padding:6px;font-weight:600}
-.tabs .on{background:#fff}
-.em{text-align:center;color:var(--mut);padding:6px 0}
-.si{display:grid;grid-template-columns:1fr auto auto;gap:2px 8px;padding:8px 0;border-bottom:1px solid var(--line)}
-.si small{color:var(--mut);grid-column:1}.si b{color:var(--grn)}
-.si button{grid-row:1/3;grid-column:3;background:none;border:0;font-size:18px;color:var(--mut)}
-.mt{background:var(--dk);color:#fff;position:relative;overflow:hidden}
-.mt h3{margin:0 0 10px;font:700 17px Barlow}
-.mt label{display:block;font-size:12px;margin:10px 0 4px}
-.mt input{width:130px;border:1px solid #444;background:#fff;color:var(--ink);border-radius:8px;padding:10px;font:600 16px Barlow}
-.mt .go{width:100%;margin-top:14px;border:0;border-radius:8px;background:linear-gradient(180deg,var(--or2),var(--or));color:#06210f;padding:13px;font-weight:700;font-size:15px}
-.mt .go:disabled{opacity:.45}
-.mt svg{position:absolute;right:-8px;top:-8px;width:90px;opacity:.5}
-.mt .ok{color:#6dff9c;font-weight:600;margin-top:8px;text-align:center}
-footer{max-width:1500px;margin:6px auto;padding:16px 18px;color:var(--mut);font-size:12px}
-@media(max-width:1150px){.wrap{grid-template-columns:minmax(0,1fr) 300px}.side{display:none}.mr .ob{width:260px}}
-@media(max-width:800px){.wrap{grid-template-columns:minmax(0,1fr)}.rp{position:static;padding:0 10px}.top{gap:12px}.auth .ic{display:none}.mr{grid-template-columns:1fr}.mr .ob{width:100%}.mc{width:86%}nav{display:none}}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+.mr .o{flex-direction:column;gap:0;padding:5px 6px;background:var(--p2)}
+.mr .o small{font-size:11px;color:var(--mu)}
+.mr .o.sel{background:var(--pk);border-color:var(--tx)}.mr .o.sel small{color:#0b0b0b}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ms{padding:10px 0;border-bottom:1px solid var(--ln)}.ms b{display:block;margin-bottom:6px;font-weight:600}.ms small{color:var(--mu);display:block;margin-top:5px}.ms.ok b{text-decoration:line-through}
+.pool{margin:8px 0;color:var(--mu)}.pool b{color:var(--tx);font:800 18px Unbounded}
+#lb{list-style:none;margin:6px 0 0;padding:0}
+#lb li{display:grid;grid-template-columns:38px 1fr auto;gap:6px;padding:8px;border-radius:12px}
+#lb li.me{background:var(--pk);color:#0b0b0b}#lb em{font-style:normal;font-weight:700}
+.bons{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.bn2{border:1.5px solid var(--tx);border-radius:20px;padding:18px}
+.bn2 h3{font-size:15px;margin-bottom:6px}.bn2 p{margin:0 0 12px;color:var(--mu)}
+.bn2.a{background:var(--tx);color:var(--bg)}.bn2.a p{color:#bbb}.bn2.a .b.g{background:var(--pk);color:#0b0b0b;border-color:var(--pk)}
+.tr{display:inline-block;margin:0 6px 6px 0;padding:6px 12px;border-radius:99px;background:var(--p2);font-weight:700}
+.tr.on{background:var(--pk);color:#0b0b0b}
+.rk{display:flex;gap:8px}.rk span{width:28px;height:28px;border-radius:50%;border:2px dashed #aaa}
+.bn{padding:9px 12px;border-radius:12px;background:var(--p2);color:var(--mu);font-weight:600;font-size:13px;border:1px solid var(--ln)}
+.bn.ok{color:var(--tx);border-left:4px solid var(--pk)}
+.rp{position:sticky;top:calc(84px + env(safe-area-inset-top,0px));align-self:start;display:flex;flex-direction:column;gap:12px}
+.bx h5{margin:0 0 10px;text-align:center;font:700 13px Unbounded}
+.tabs{display:flex;background:var(--p2);border-radius:99px;padding:3px;margin-bottom:12px}
+.tabs button{flex:1;border:0;background:none;border-radius:99px;padding:6px;font-weight:600}.tabs .on{background:var(--bg);box-shadow:0 0 0 1px var(--ln)}
+.si{display:grid;grid-template-columns:1fr auto auto;gap:2px 8px;padding:8px 0;border-bottom:1px solid var(--ln)}
+.si small{color:var(--mu);grid-column:1}
+.si button{grid-row:1/3;grid-column:3;background:none;border:0;font-size:18px;color:var(--mu)}
+.em{text-align:center;color:var(--mu);padding:6px 0}
+.mt{background:var(--tx);color:var(--bg);border-color:var(--tx);box-shadow:4px 4px 0 var(--pk)}
+.mt h3{font-size:15px;margin-bottom:6px}.mt label{display:block;font-size:12px;margin:10px 0 4px;color:#bbb}
+.mt input{width:100%;border:1px solid #333;background:#1a1a1a;color:#fff;border-radius:12px;padding:10px;font:700 16px Outfit}
+.go{width:100%;margin-top:14px;border:0;border-radius:99px;background:var(--pk);color:#0b0b0b;padding:13px;font:800 15px Outfit}
+.go:disabled{opacity:.4}
+.ok{font-weight:600;margin-top:8px;text-align:center}
+dialog{border:2px solid var(--tx);border-radius:18px;padding:20px;width:min(420px,92vw)}
+dialog::backdrop{background:#000a}dialog h3{font-size:18px;margin-bottom:6px}dialog p{margin:0 0 10px;color:var(--mu)}
+dialog label{display:block;font-weight:600;margin:10px 0 4px}dialog input{width:100%;padding:10px;border:1.5px solid var(--ln);border-radius:10px;font:inherit}
+.kb{display:flex;gap:8px;justify-content:flex-end;margin-top:16px}.kb button{border:0;border-radius:99px;padding:10px 16px;font-weight:700;background:var(--p2)}.kb .sv{background:var(--tx);color:var(--bg)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--tx);color:var(--bg);padding:12px 18px;border-radius:14px;transition:.3s;max-width:92vw;z-index:50;font-weight:600}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+footer{max-width:1500px;margin:0 auto;padding:16px 18px 30px;color:var(--mu);font-size:12px}footer b{color:var(--tx)}
+@media(max-width:1000px){.wrap{grid-template-columns:minmax(0,1fr)}.rp{position:static}.bons,.duo{grid-template-columns:1fr}.mr .ob{width:260px}}
+@media(max-width:700px){.lvc{display:none}.mr{grid-template-columns:1fr}.mr .ob{width:100%}.mc{width:86%}nav{order:3;width:100%}.top{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* compacto + móvil */
+body{font-size:13px}
+header{margin:8px 12px 0}.top{padding:6px 12px;gap:12px}.logo svg{width:34px;height:34px}.logo b{font-size:19px}
+.tnav a{padding:6px 13px}
+.wrap{grid-template-columns:minmax(0,1fr) 310px;padding:12px;gap:14px}
+.vw{gap:14px}
+.card,.sec,.bx{padding:12px;border-radius:16px}
+.sh h2,.card h2{font-size:15px}
+.mc{width:300px;height:222px;border-radius:16px}
+.tm{font-size:13px}.crest{width:20px;height:20px}
+.o{padding:6px 8px}.o b{font-size:14px}
+.mr{padding:9px 2px;gap:8px;grid-template-columns:70px minmax(0,1fr) auto}.mr .ob{width:290px}
+.rp{top:calc(70px + env(safe-area-inset-top,0px))}
+.tiles{display:flex;gap:8px;overflow-x:auto}
+.tl{flex:none;width:136px;height:84px;border-radius:14px;padding:10px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;color:#fff;background:#0b0b0b;font-weight:700;font-size:12.5px}
+.tl svg{width:28px;height:28px}
+.tl.p{background:var(--pk);color:#0b0b0b}.tl.w{background:var(--bg);color:var(--tx);border:1.5px solid var(--tx)}
+.bnav,.fab,.cl,.bk{display:none}
+@media(max-width:1000px){.wrap{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:700px){
+.tnav,.lvc{display:none}
+.wrap{padding:10px 10px 96px}
+.bnav{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:35;background:var(--bg);border-top:2px solid var(--tx);padding-bottom:env(safe-area-inset-bottom,0px)}
+.bnav>*{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 0 6px;background:none;border:0;color:var(--mu);font-size:11px;font-weight:600;text-decoration:none;position:relative}
+.bnav .ic{font-size:19px;line-height:1;padding:2px 14px;border-radius:99px}
+.bnav .on{color:var(--tx)}.bnav .on .ic{background:var(--pk)}
+.bdg{position:absolute;top:2px;right:20%;background:var(--pk);color:#0b0b0b;border:1.5px solid var(--tx);border-radius:99px;font-size:10px;font-weight:800;padding:0 5px;min-width:18px;text-align:center}
+.fab{position:fixed;left:10px;right:10px;bottom:calc(64px + env(safe-area-inset-bottom,0px));z-index:34;display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--tx);color:var(--bg);border:0;border-radius:99px;padding:11px 18px;font-weight:600;box-shadow:3px 3px 0 var(--pk)}
+.fab b{color:var(--pk)}
+.rp{position:fixed;left:0;right:0;bottom:0;top:auto;max-height:82vh;overflow:auto;background:var(--bg);border-radius:22px 22px 0 0;border:2px solid var(--tx);padding:14px;z-index:40;transform:translateY(105%);transition:transform .3s}
+body.sheet .rp{transform:none}
+.bk{position:fixed;inset:0;background:#0009;z-index:39}body.sheet .bk{display:block}
+.cl{display:block;margin:0 0 8px auto;border:0;background:var(--p2);border-radius:99px;padding:6px 14px;font-weight:700}
+.mc{width:84%}.mr{grid-template-columns:1fr}.mr .ob{width:100%}
+}
+
+.gst{display:flex;gap:8px}
+.usr{position:relative}
+.av{display:flex;align-items:center;gap:8px;border:1.5px solid var(--tx);background:var(--bg);border-radius:99px;padding:3px 14px 3px 3px;font-weight:700}
+.av i{width:30px;height:30px;border-radius:50%;background:var(--pk);display:grid;place-items:center;font-style:normal;font-weight:800}
+.pm{position:absolute;right:0;top:calc(100% + 8px);min-width:210px;background:var(--bg);border:2px solid var(--tx);border-radius:14px;box-shadow:3px 3px 0 var(--pk);padding:6px;z-index:50}
+.pm a,.pm button{display:block;width:100%;text-align:left;padding:9px 12px;border:0;background:none;border-radius:10px;font-weight:600;text-decoration:none;color:var(--tx)}
+.pm a:hover,.pm button:hover{background:var(--p2)}
+.atabs{display:flex;gap:6px;margin-bottom:12px}.atabs button{flex:1;border:0;background:var(--p2);border-radius:99px;padding:9px;font-weight:700}.atabs .on{background:var(--tx);color:var(--bg)}.atabs #ax{flex:none;width:40px}
+#ad form{display:flex;flex-direction:column;gap:10px}
+#ad label{display:block;font-weight:600;margin:0}
+#ad .ck{display:flex;gap:8px;align-items:flex-start;font-weight:500;font-size:12px}#ad .ck input{width:auto;margin-top:2px}
+.go2{border-radius:99px;background:var(--pk);color:#0b0b0b;padding:12px;font:800 14px Outfit;border:1.5px solid var(--tx)}
+.am{color:#d10f72;font-weight:600;min-height:18px;margin:0 0 6px}
+.pfh{display:flex;gap:14px;align-items:center}
+.pfa{width:56px;height:56px;border-radius:50%;background:var(--pk);border:2px solid var(--tx);display:grid;place-items:center;font:800 24px Unbounded;font-style:normal;flex:none}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}.stats div{background:var(--p2);border-radius:14px;padding:10px;text-align:center}.stats b{display:block;font:800 17px Unbounded}.stats small{color:var(--mu)}
+.hi{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px solid var(--ln)}.hi small{display:block;color:var(--mu)}.hr{text-align:right;white-space:nowrap}.hr small{color:var(--tx);font-weight:600}
+.acc{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+@media(max-width:700px){#avn{display:none}.av{padding:3px}}
+
+@keyframes bl{50%{opacity:.2}}
+.rd{display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--red);animation:bl 1.1s infinite;vertical-align:middle}
+.rd.w{background:var(--bg);width:8px;height:8px}
+.tnav .rd{width:9px;height:9px;margin-right:6px}
+.bnav .ic{display:inline-flex;align-items:center;justify-content:center;min-height:30px}
+dialog{background:var(--bg);color:var(--tx)}
+dialog input,#ad input{background:var(--bg);color:var(--tx)}
+.atabs button{color:var(--tx)}.atabs .on{color:var(--bg)}
+.kb button{color:var(--tx)}.kb .sv{color:var(--bg)}
+#ad .ck{color:var(--tx)}
+@media(prefers-reduced-motion:reduce){.rd,.dotl{animation:none}}
+
+#ad{max-height:92vh;overflow:auto}
+#ad select,#dp select,#dp input{width:100%;padding:10px;border:1.5px solid var(--ln);border-radius:10px;font:inherit;background:var(--bg);color:var(--tx)}
+#dp label{display:block;font-weight:600;margin:10px 0 4px}#dp .ck{display:flex;gap:8px;align-items:flex-start;font-weight:500;font-size:12px}#dp .ck input{width:auto;margin-top:2px}
+#ad .g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#ad .tel{display:flex;align-items:center;gap:8px;margin-top:4px}#ad .tel span{font-weight:700}
+.sms{background:#0b0b0b;color:#fff;border-radius:14px;padding:12px;font-size:13px;line-height:1.5}.sms small{color:#ff8cc4}.sms b{color:var(--pk);font-size:17px;letter-spacing:2px}
+.lk{background:none;border:0;text-decoration:underline;font-weight:600;color:var(--tx);padding:6px}
+.sal{border:1.5px solid var(--tx);background:var(--pk);border-radius:99px;padding:6px 12px;font-weight:800;color:#0b0b0b}
+.usr{display:flex;gap:8px;align-items:center}
+.wal{display:flex;gap:10px;align-items:stretch;margin-top:12px;flex-wrap:wrap}.wal>div{background:var(--p2);border-radius:14px;padding:10px 14px}.wal small{color:var(--mu)}.wal b{display:block;font:800 16px Unbounded}
+.rol{margin-top:10px}.rol small{display:block;margin-bottom:5px;color:var(--mu)}
+.rol i{display:block;height:6px;border-radius:9px;background:var(--ln);overflow:hidden}.rol u{display:block;height:100%;background:var(--pk)}
+.er{color:#d10f72;font-weight:600}
+.tyc{margin:10px 0 0;padding-left:20px}.tyc li{margin:7px 0}
+.dt{margin-top:10px}.dt summary{cursor:pointer;font-weight:600}.dt .tyc{font-size:12px}
+.rs{display:flex;gap:6px;margin-top:4px;justify-content:flex-end}.rs button{border:1px solid var(--tx);background:var(--bg);border-radius:99px;padding:3px 10px;font-weight:600;font-size:11px;color:var(--tx)}
+.chips2{display:flex;gap:6px;margin:8px 0}.chips2 button{flex:1;border:1.5px solid var(--tx);background:var(--bg);border-radius:99px;padding:7px;font-weight:700;color:var(--tx)}
+@media(max-width:700px){#ad .g2{grid-template-columns:1fr}.sal{padding:5px 9px;font-size:12px}}
+
+.ac{display:grid;grid-template-columns:270px minmax(0,1fr);gap:14px;align-items:start}
+.am2{background:var(--bg);border:1.5px solid var(--ln);border-radius:20px;padding:10px;position:sticky;top:calc(84px + env(safe-area-inset-top,0px))}
+.mi{display:flex;align-items:center;gap:12px;width:100%;border:0;background:none;padding:7px 8px;border-radius:14px;font-weight:700;text-align:left;color:var(--tx);margin-bottom:2px}
+.ic2{width:38px;height:38px;border-radius:12px;background:var(--pk2);display:grid;place-items:center;flex:none}
+.ic2 svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.mi .ch{margin-left:auto;font-style:normal;color:var(--mu)}
+.mi.on{background:var(--tx);color:var(--bg)}.mi.on .ic2{background:var(--pk);color:#0b0b0b}.mi.on .ch{color:var(--bg)}
+.sub{display:none;padding:2px 0 6px 58px}.sub.op{display:block}
+.sub button{display:block;width:100%;text-align:left;border:0;background:none;padding:8px 10px;border-radius:10px;font-weight:600;color:var(--mu)}
+.sub button.on{color:var(--tx);background:var(--pk2)}
+.ah{display:flex;align-items:center;gap:10px}.ah h2{flex:1;font-size:16px}
+.ib{border:1.5px solid var(--tx);background:var(--bg);width:38px;height:38px;border-radius:12px;font-size:17px;color:var(--tx)}
+#mb{display:none}
+.abal{display:flex;justify-content:space-between;align-items:center;margin:12px 0;padding:10px 14px;background:var(--p2);border-radius:14px}.abal b{font:800 18px Unbounded}
+.rw{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--ln)}
+.rw small{display:block;color:var(--mu)}.rw b{display:block;font-weight:600}.rw .ok2{color:#0a7a43;font-weight:600}.rw .no2{color:#d10f72;font-weight:600}
+.edw{flex:1;display:flex;flex-direction:column;gap:6px}.edb{display:flex;gap:6px}
+.ap input,.ap select{padding:10px;border:1.5px solid var(--ln);border-radius:10px;font:inherit;background:var(--bg);color:var(--tx);width:100%}
+.frm{display:flex;gap:8px;margin:10px 0}.frm2{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.dt2{margin-top:6px}.dt2>summary{cursor:pointer;font-weight:700;padding:14px 0}
+.mv{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--ln)}.mv small{display:block;color:var(--mu)}.pos{color:#0a7a43;font-weight:700}.neg{font-weight:700}
+.sw{position:relative;width:46px;height:26px;display:inline-block;flex:none}.sw input{opacity:0;width:0;height:0}
+.sw i{position:absolute;inset:0;background:#ccc;border-radius:99px;transition:.2s}.sw i::before{content:"";position:absolute;width:20px;height:20px;left:3px;top:3px;background:var(--bg);border-radius:50%;transition:.2s}
+.sw input:checked+i{background:var(--pk)}.sw input:checked+i::before{transform:translateX(20px)}
+.bk2{display:none;position:fixed;inset:0;background:#0009;z-index:55}
+@media(max-width:1000px){.ac{grid-template-columns:1fr}
+.am2{position:fixed;left:0;top:0;bottom:0;width:82%;max-width:340px;z-index:60;border-radius:0 20px 20px 0;overflow:auto;transform:translateX(-105%);transition:transform .3s;padding:16px 10px}
+body.dr .am2{transform:none}body.dr .bk2{display:block}#mb{display:block}}
+
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin:12px 0}
+.dy{text-align:center}.dy span{display:grid;place-items:center;width:100%;aspect-ratio:1;max-width:48px;margin:0 auto 4px;border-radius:50%;border:2px solid var(--ln);font:800 13px Unbounded;color:var(--mu)}
+.dy.ok span{background:var(--pk);border-color:var(--tx);color:#0b0b0b}.dy.hoy span{border-color:var(--tx)}.dy small{color:var(--mu);font-size:11px}
+.cfs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.cf{border:1.5px dashed #bbb;border-radius:14px;padding:12px;text-align:center}.cf small{display:block;color:var(--mu)}.cf.ok{border-style:solid;border-color:var(--tx);background:var(--pk2)}
+#tt{margin-bottom:2px}
+@media(max-width:700px){.cfs{grid-template-columns:1fr}#tt button{flex:1;font-size:12px;padding:7px 8px}}
+
+html{background:var(--bg)}
+.mt,.bn2.a{background:#0b0b0b;color:#fff}
+:root[data-th=d]{--bg:#000;--tx:#fff;--p2:#1b1b1b;--ln:#303030;--mu:#a6a6a6;--pk2:#3b1428;color-scheme:only dark}
+:root[data-th=d] .tl{border:1px solid var(--ln)}
+:root[data-th=d] .lvc i,:root[data-th=d] .ms i,:root[data-th=d] .rol i{background:#333}
+:root[data-th=d] .sw i{background:#555}
+:root[data-th=d] .cf{border-color:#555}
+.tg{display:flex;align-items:center;gap:6px;border:1.5px solid var(--tx);background:var(--bg);color:var(--tx);border-radius:99px;padding:6px 12px;font-weight:700}
+.tg svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:700px){.tg span{display:none}.tg{padding:6px 8px}}
+#wd select,#wd input{width:100%;padding:10px;border:1.5px solid var(--ln);border-radius:10px;font:inherit;background:var(--bg);color:var(--tx)}
+#wd label{display:block;font-weight:600;margin:10px 0 4px}
+#wd .ck{display:flex;gap:8px;align-items:flex-start;font-weight:500;font-size:12px}#wd .ck input{width:auto;margin-top:2px}
+#wd .wal{margin-top:6px}
+.rwd{margin-top:10px}.ck2{display:flex;gap:8px;align-items:center;font-size:12px;margin:6px 0;color:#fff}.ck2 input{width:auto}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button{border:1.5px solid var(--ln);background:var(--bg);color:var(--tx);border-radius:99px;padding:7px 14px;font-weight:600}
+.seg button.on{background:var(--pk);color:#0b0b0b;border-color:var(--tx)}
 </style></head><body>
 <svg width="0" height="0" style="position:absolute"><defs>
 <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#ffd9c2"/></linearGradient>
 <symbol id="deer" viewBox="0 0 64 64"><path d="M20 22C14 20 8 14 9 6M15 15c-4-1-6-4-6-8M44 22c6-2 12-8 11-16M49 15c4-1 6-4 6-8" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><path d="M18 24c4-3 9-4 14-4s10 1 14 4c1 8-1 14-5 20-3 5-6 8-9 10-3-2-6-5-9-10-4-6-6-12-5-20z" fill="currentColor"/><circle cx="25" cy="33" r="2.6" fill="#fff"/><circle cx="39" cy="33" r="2.6" fill="#fff"/><ellipse cx="32" cy="49" rx="4" ry="3" fill="#fff"/></symbol>
 <symbol id="pl" viewBox="0 0 120 170"><circle cx="58" cy="16" r="12" fill="#3a251c"/><path d="M36 31l38 2 12 42-16 6-5-24-8 30-28-8z" fill="currentColor"/><path d="M30 78l40 5-2 22-40-5z" fill="#101218"/><path d="M38 100l-8 38-16 16" stroke="#3a251c" stroke-width="11" fill="none" stroke-linecap="round"/><path d="M62 104l30 18 12 22" stroke="#3a251c" stroke-width="11" fill="none" stroke-linecap="round"/><path d="M46 36l-22 30M80 40l22-14" stroke="#3a251c" stroke-width="9" fill="none" stroke-linecap="round"/><ellipse cx="14" cy="156" rx="13" ry="6" fill="#111"/><ellipse cx="106" cy="148" rx="13" ry="6" fill="#111" transform="rotate(30 106 148)"/></symbol>
 </defs></svg>
-
 <header><div class="top">
-<a class="logo" href="#" aria-label="bambibet"><svg viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="url(#lg)"/><use href="#deer" x="4" y="5" width="56" height="56" style="color:#0a8f4e"/></svg><b>bambi<i>bet</i></b></a>
-<nav><a class="on" href="#">Apuestas deportivas</a><a href="#">Apuestas en vivo</a><a href="#">Casino</a><a href="#">Casino en vivo</a><a href="#">Virtuales</a><a href="#">Social<em>NUEVO</em></a></nav>
-<div class="auth"><span class="ic">🎁</span><span class="ic">🔍</span><span class="ic">⚙️</span><button class="b">REGISTRO</button><button class="b g">INGRESAR</button></div>
+<a class="logo" href="#" data-go="dep" aria-label="bambibet inicio"><svg viewBox="0 0 64 64"><rect x="2" y="2" width="60" height="60" rx="16" fill="#ff2e93" style="stroke:var(--tx)" stroke-width="4"/><use href="#deer" x="8" y="9" width="48" height="48" style="color:#0b0b0b"/></svg><b>bambi<i>bet</i></b></a>
+<nav class="tnav" aria-label="Principal"><a href="#" class="on" data-go="dep">Deportes</a><a href="#" data-go="dep" data-sc="vivo"><i class="rd"></i>En vivo</a><a href="#" data-go="tor">Torneos</a><a href="#" data-go="bon">Bonos</a></nav>
+<div class="auth"><a class="lvc" id="lvc" href="#" data-go="tor"></a><button class="tg" id="th" aria-label="Cambiar tema"></button><button id="gear" aria-label="Claves de API">⚙️</button><span class="gst" id="gst"><button class="b" id="hr">Registro</button><button class="b g" id="hi">Ingresar</button></span>
+<div class="usr" id="usr" hidden><button class="sal" id="sal" aria-label="Saldo y depósito"></button><button class="av" id="av" aria-haspopup="true"><i id="avl">B</i><span id="avn"></span></button>
+<div class="pm" id="pm" hidden><a href="#" data-go="per" data-sc="pan">Mi panel</a><a href="#" data-go="per" data-sc="dat">Mis datos</a><a href="#" data-go="per" data-sc="ab">Mis jugadas</a><a href="#" data-go="tor">Mi nivel y misiones</a><button id="lo">Cerrar sesión</button></div></div></div>
 </div></header>
-
-<div class="wrap">
-<aside class="side">
-<button>📅 Programación de Apuestas</button><button>🏆 Apuestas por los Campeones</button><button>⭐ Apuestas especiales</button><button>❤️ Los favoritos</button><button>🎯 Misiones</button><button>🥇 Torneos de Deportes</button><button>📱 iOS y Android</button><button>🎮 Virtuales</button><button>🔥 Win-Streak</button>
-<h4>Competencias favoritas</h4><button class="cp">LaLiga</button><button class="cp">Liga 1 Perú</button><button class="cp">Premier League</button>
-</aside>
-
-<main>
-<div class="bn" id="bn" hidden></div>
-<div class="car" id="car"></div>
-<div class="tiles" id="tiles"></div>
-<section class="sec">
-<div class="sh"><h2>Súmate a la acción</h2><div class="seg" id="seg"><button class="on" data-v="1">⚡ En vivo</button><button data-v="0">⏱ Próximos</button></div></div>
-<div class="pills" id="pills"></div>
-<div id="list"></div>
-</section>
-</main>
-
-<aside class="rp">
-<div class="bx"><h5>Mis apuestas</h5>
-<div class="tabs"><button class="on">Abiertas</button><button>Resueltas</button></div>
-<div id="slip"></div></div>
-<div class="bx mt"><svg viewBox="0 0 64 64"><use href="#deer" style="color:#19c26a"/></svg>
-<h3>Mentor de Apuestas</h3>
-<label for="st">Monto que deseas apostar (S/)</label><input id="st" type="number" min="1" value="30" inputmode="decimal">
-<label for="wn">Monto que deseas ganar (S/)</label><input id="wn" type="number" min="0" inputmode="decimal">
-<button class="go" id="go">Apostar</button><div class="ok" id="ok" role="status"></div></div>
-</aside>
+<div class="wrap"><main>
+<div class="vw" id="v-dep">
+<section><div class="sh" style="margin-bottom:8px"><h2>Partidos importantes</h2></div><div class="bn" id="bn" hidden></div><div class="car" id="car"></div></section>
+<div class="tiles">
+<a class="tl" href="#" data-go="tor"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>Misiones de hoy</a>
+<a class="tl p" href="#" data-go="tor"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H4v2a4 4 0 0 0 4 4M16 6h4v2a4 4 0 0 1-4 4M12 13v4M8 20h8"/></svg>Torneo S/ 5,000</a>
+<a class="tl w" href="#" data-go="bon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="9" width="16" height="11"/><rect x="3" y="6" width="18" height="3"/><path d="M12 6v14"/></svg>Bono 100% hasta S/ 500</a>
+<a class="tl" href="#" data-go="tor"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 20v-6M12 20V8M19 20V4"/></svg>Mi nivel</a>
 </div>
-<footer><b>+18</b> Juega con responsabilidad y solo con dinero que puedas permitirte perder. bambibet es un diseño conceptual de demostración; las apuestas son simuladas.</footer>
-
+<section class="sec" id="vivo"><div class="sh"><h2><span class="dotl"></span>En vivo ahora<span class="cnt" id="nv">0</span></h2></div><div class="pills" id="pills"></div><div class="ox" id="ox"></div><div id="listlive"></div></section>
+<section class="sec" id="partidos"><div class="sh"><h2>Próximos partidos<span class="cnt" id="nh">0</span></h2></div><div id="list"></div></section>
+</div>
+<div class="vw" id="v-tor" hidden>
+<div class="seg" id="tt"><button class="on" data-t="a">Opción A: ruta de niveles</button><button data-t="b">Opción B: retos de la semana</button></div>
+<div class="vw" id="tA">
+<section class="card" id="ruta"><div class="sh"><h2>Tu ruta de niveles</h2><span class="mu"><b id="xpn">0</b> XP · <span id="lt"></span></span></div><div class="trk"><div class="line"><u id="lf"></u></div><ol id="lad"></ol></div><small>Cada S/ 1 apostado suma 1 XP. Las misiones dan XP extra. Todo es simulado.</small></section>
+<div class="duo"><section class="card"><h2>Misiones de hoy</h2><div id="ms"></div></section><section class="card"><h2>Torneo del fin de semana</h2><p class="pool">Bolsa <b>S/ 5,000</b><br>Cierra en <span id="cd"></span></p><ol id="lb"></ol></section></div>
+</div>
+<div class="vw" id="tB" hidden>
+<section class="card"><div class="sh"><h2>Racha de la semana</h2><span class="mu" id="wk_t"></span></div><div class="days" id="wk_d"></div><small class="mu">Apuesta cada día, de lunes a domingo, para completar tu racha.</small></section>
+<section class="card"><h2>Retos de la semana</h2><div id="wk_m"></div></section>
+<section class="card"><h2>Cofres</h2><div class="cfs" id="wk_c"></div></section>
+</div>
+</div>
+<div class="vw" id="v-bon" hidden>
+<section><div class="sh" style="margin-bottom:10px"><h2>Bonos</h2></div><div class="bons">
+<div class="bn2 a"><h3>100% en tu primer depósito</h3><p>Hasta S/ 500 de bono. Rollover x5, cuota mínima 2.00 en combinadas y 1.80 en simples.</p><button class="b g" id="bdp">Depositar y reclamar</button></div>
+<div class="bn2 b"><h3>Combinada Plus</h3><p>Más selecciones en tu boleto, más ganancia extra.</p><span class="tr" data-p="5">3+ selecciones: +5%</span><span class="tr" data-p="15">5+: +15%</span><span class="tr" data-p="30">8+: +30%</span></div>
+<div class="bn2 c"><h3>Racha de aciertos</h3><p>Acierta 3 pronósticos seguidos y llévate una apuesta gratis.</p><div class="rk"><span></span><span></span><span></span></div></div>
+</div></section>
+<section class="card" id="tyc"><h2>Términos y condiciones del bono de primer depósito</h2><ol class="tyc" id="tycl"><li><b>Quién puede participar.</b> Mayores de 18 años con cuenta activada por SMS. El bono es solo para el primer depósito y una vez por persona, DNI, teléfono, dirección y dispositivo.</li>
+<li><b>El bono.</b> 100% de tu primer depósito, hasta S/ 500. Depósito mínimo: S/ 20. Ejemplo: si depositas S/ 200 recibes S/ 200 de bono; si depositas S/ 800 recibes S/ 500.</li>
+<li><b>Activación.</b> Marca la opción del bono al hacer tu primer depósito. No se puede activar después ni sobre depósitos anteriores.</li>
+<li><b>Rollover x5.</b> Debes apostar 5 veces la suma del depósito más el bono antes de poder retirar. Ejemplo: depósito S/ 100 + bono S/ 100 = S/ 200, por lo que debes apostar S/ 1,000.</li>
+<li><b>Apuestas que cuentan.</b> Apuestas deportivas pre-partido o en vivo, en cualquier deporte. Simples: cuota mínima 1.80. Combinadas (2 o más selecciones): cuota total mínima 2.00. Se usa la cuota original, sin sumar bonos extra como Combinada Plus.</li>
+<li><b>Apuestas que no cuentan.</b> Las que estén por debajo de la cuota mínima, las anuladas o devueltas, y las que cubran resultados opuestos para asegurar ganancias.</li>
+<li><b>Uso del saldo.</b> Primero se usa tu dinero real y después el saldo de bono.</li>
+<li><b>Retiros.</b> No puedes retirar el bono ni las ganancias asociadas hasta completar el rollover. Si el saldo de bono se agota antes, la condición se cancela. Al completarlo, el bono pasa a saldo real. Además, para retirar cualquier dinero debes haber apostado al menos el 100% de tus depósitos (no solo del bono).</li>
+<li><b>Vigencia.</b> 30 días desde la activación. Pasado ese plazo se retira el bono y el rollover pendiente.</li>
+<li><b>Uso indebido.</b> Cuentas múltiples, datos falsos o apuestas coordinadas anulan el bono y las ganancias asociadas.</li>
+<li><b>Cambios.</b> bambibet puede modificar o terminar la promoción avisando con anticipación.</li>
+<li><b>Juego responsable.</b> Solo para mayores de 18 años. Apuesta únicamente lo que puedas permitirte perder.</li></ol><p class="mu" style="margin:10px 0 0">Texto de ejemplo para la prueba, armado con las cláusulas habituales de este tipo de bonos. No es asesoría legal.</p></section></div>
+<div class="vw" id="v-per" hidden>
+<div class="ac"><aside class="am2" id="am2"></aside>
+<section class="ap card"><div class="ah"><button class="ib" id="mb" aria-label="Menú">☰</button><h2 id="pt"></h2><button class="ib" id="px" aria-label="Cerrar">✕</button></div>
+<div class="abal"><div><small class="mu">Saldo</small><br><b id="ab">S/ 0.00</b></div><span style="display:flex;gap:8px"><button class="b" data-rt="1">Retirar</button><button class="b g" id="dpb2">Depositar</button></span></div>
+<div id="pg"></div></section></div></div>
+</main>
+<aside class="rp" id="rp"><button class="cl" id="cl">Cerrar ✕</button><div class="bx"><h5>Mis apuestas</h5><div class="tabs"><button class="on">Abiertas</button><button>Resueltas</button></div><div id="slip"></div></div>
+<div class="bx mt"><h3>Mentor de apuestas</h3><label for="st">Monto que deseas apostar (S/)</label><input id="st" type="number" min="1" value="30" inputmode="decimal"><label for="wn">Monto que deseas ganar (S/)</label><input id="wn" type="number" min="0" inputmode="decimal"><div class="rwd" id="rwd" hidden></div><button class="go" id="go">Apostar</button><div class="ok" id="ok" role="status"></div></div></aside>
+</div>
+<dialog id="ad"><div class="atabs"><button id="ti" class="on">Ingresar</button><button id="tr2">Crear cuenta</button><button id="ax" aria-label="Cerrar">✕</button></div>
+<p class="am" id="am" role="alert"></p>
+<form id="fi"><label>Correo<input id="li_e" type="email" autocomplete="email" required></label><label>Contraseña<input id="li_p" type="password" autocomplete="current-password" required></label><button class="go2">Ingresar</button></form>
+<form id="fr" hidden novalidate>
+<div class="g2"><label>Nombres<input id="rg_n" autocomplete="given-name"></label><label>Apellidos<input id="rg_a" autocomplete="family-name"></label></div>
+<div class="g2"><label>DNI<input id="rg_d" inputmode="numeric" maxlength="8" placeholder="8 dígitos"></label><label>Fecha de nacimiento<input id="rg_b" type="date"></label></div>
+<label>Género (opcional)<select id="rg_g"><option value="">Prefiero no decirlo</option><option>Hombre</option><option>Mujer</option></select></label>
+<label>País<select id="rg_p0"><option value="PE">Perú</option><option disabled>Otros países (próximamente)</option></select></label>
+<label>Departamento<select id="rg_dp"></select></label>
+<label>Ciudad / Provincia<select id="rg_c"></select></label><input id="rg_c2" placeholder="Escribe tu ciudad" hidden>
+<label>Distrito<select id="rg_s"></select></label><input id="rg_s2" placeholder="Escribe tu distrito" hidden>
+<label>Dirección<input id="rg_ad" autocomplete="street-address" placeholder="Calle, número, referencia"></label>
+<label>Correo<input id="rg_e" type="email" autocomplete="email"></label>
+<label>Celular<div class="tel"><span>+51</span><input id="rg_t2" inputmode="tel" maxlength="9" placeholder="9XXXXXXXX"></div></label>
+<div class="g2"><label>Contraseña<input id="rg_p" type="password" autocomplete="new-password" placeholder="8+ con letras y números"></label><label>Repetir contraseña<input id="rg_p2" type="password" autocomplete="new-password"></label></div>
+<label>Código de referido (opcional)<input id="rg_pm" autocapitalize="characters" placeholder="¿Te recomendó alguien? Escribe su código"></label><small id="rg_pmn" class="mu"></small>
+<label class="ck"><input id="rg_t" type="checkbox"> Tengo 18 años o más y acepto los términos y condiciones, la política de privacidad y los términos del bono (puedes verlos abajo).</label>
+<label class="ck"><input id="rg_pep" type="checkbox"> Soy una persona expuesta políticamente (PEP) o familiar de una.</label>
+<label class="ck"><input id="rg_bn" type="checkbox" checked> Quiero el bono de bienvenida: 100% en mi primer depósito, hasta S/ 500.</label>
+<label class="ck"><input id="rg_m" type="checkbox"> Quiero recibir promociones por correo y SMS (opcional).</label>
+<details class="dt"><summary>Ver términos del bono</summary><ol class="tyc tyc-c"></ol></details>
+<button class="go2">Continuar: verificar mi celular</button></form>
+<form id="fv" hidden novalidate><p style="margin:0">Te enviamos un código SMS al <b id="vt"></b>.</p><div class="sms" id="sms"></div>
+<label>Código de 6 dígitos<input id="vc" inputmode="numeric" maxlength="6" autocomplete="one-time-code"></label>
+<button class="go2">Verificar y activar mi cuenta</button><button type="button" class="lk" id="vr">Reenviar código</button></form>
+<p class="mu" style="margin:12px 0 0;font-size:12px">Cuenta de prueba: tus datos se guardan solo en este navegador.</p></dialog>
+<dialog id="dp"><h3>Depositar</h3><p>Depósito de prueba: no se cobra dinero real.</p>
+<label for="dm">Monto (S/)</label><input id="dm" type="number" min="20" max="5000" value="100" inputmode="decimal">
+<div class="chips2"><button data-dm="50">50</button><button data-dm="100">100</button><button data-dm="250">250</button><button data-dm="500">500</button></div>
+<label for="dmt">Método de pago</label><select id="dmt"><option>Yape</option><option>Plin</option><option>Tarjeta</option><option>PagoEfectivo</option></select>
+<label class="ck" id="dbw"><input id="dbc" type="checkbox" checked> Quiero el bono de primer depósito: 100% hasta S/ 500.</label>
+<p id="dsm" style="margin:10px 0"></p>
+<details class="dt"><summary>Ver términos del bono</summary><ol class="tyc tyc-c"></ol></details>
+<div class="kb"><button id="dx">Cancelar</button><button class="sv" id="dok">Depositar</button></div></dialog>
+<dialog id="wd"><h3>Retirar</h3><p>Retiro de prueba: no se envía dinero real.</p>
+<div id="wsm"></div>
+<label for="wmt">Método de retiro</label><select id="wmt"><option>Yape</option><option>Plin</option><option>Transferencia bancaria</option></select>
+<div id="wf"></div>
+<label for="wa">Monto (S/)</label><input id="wa" type="number" min="50" inputmode="decimal" placeholder="Mínimo S/ 50">
+<label class="ck" id="wbw" hidden><input id="wbc" type="checkbox"> Tengo un bono activo con rollover pendiente. Entiendo que si retiro ahora pierdo el bono.</label>
+<p class="er" id="wer" style="margin:10px 0 0"></p>
+<div class="kb"><button id="wx">Cancelar</button><button class="sv" id="wok">Retirar</button></div></dialog>
+<nav class="bnav" aria-label="Móvil">
+<a href="#" class="on" data-go="dep"><span class="ic">🏠</span>Inicio</a>
+<a href="#" data-go="dep" data-sc="vivo"><span class="ic"><i class="rd"></i></span>En vivo</a>
+<a href="#" data-go="dep" data-sc="partidos"><span class="ic">⚽</span>Deportes</a>
+<button id="bt"><span class="ic">🎟️</span>Apuestas<b class="bdg" id="bdg" hidden>0</b></button>
+<a href="#" data-go="per"><span class="ic">👤</span>Perfil</a>
+</nav>
+<button class="fab" id="fab" hidden><span id="fabt"></span><span id="fabw"></span><b>Ver boleto ›</b></button>
+<div class="bk" id="bk"></div>
+<div class="bk2" id="bk2"></div>
+<div class="toast" id="toast" role="status"></div>
+<dialog id="kd"><h3>Claves de API</h3><p>Se guardan solo en este navegador. Nunca viajan a GitHub.</p>
+<label for="k1">API-Football (partidos, escudos)</label><input id="k1" type="password" autocomplete="off">
+<label for="k2">The Odds API (mercados)</label><input id="k2" type="password" autocomplete="off">
+<div class="kb"><button id="kx">Cancelar</button><button id="kb2">Borrar claves</button><button class="sv" id="ks">Guardar y recargar</button></div></dialog>
+<footer><b>+18</b> Juega con responsabilidad y solo con dinero que puedas permitirte perder. bambibet es un diseño conceptual de demostración; las apuestas, niveles y premios son simulados.</footer>
 <script>
-/* ===== CONFIGURACIÓN: pega tu clave de API-Football entre las comillas ===== */
-var API_KEY="PEGA_TU_CLAVE_AQUI";
+/* ===== Las claves se guardan en tu navegador con el botón ⚙ (arriba a la derecha). No hace falta pegarlas aquí. ===== */
+var API_KEY="",ODDS_KEY="";
+try{var K=JSON.parse(localStorage.getItem("bb_keys")||"{}");API_KEY=K.f||"";ODDS_KEY=K.o||""}catch(e){}
+var ME=null,USERS=[];
+try{ME=JSON.parse(localStorage.getItem("bb_me")||"null");USERS=JSON.parse(localStorage.getItem("bb_users")||"[]")}catch(e){}
+function xk(){return ME?"bb_xp_"+ME.id:"bb_xp"}
 var API_URL="https://v3.football.api-sports.io";
 /* ============================================================================ */
 var $=function(i){return document.getElementById(i)};
@@ -156,7 +412,7 @@ var Mx=[
 {id:1,s:"Fútbol",a:"Sport Boys",b:"Alianza Atlético",ca:["#e0314b","SB"],cb:["#223","AA"],t:"Hoy 15:30",o:[2.32,3.50,3.25],art:scene("#3a1b22","#150a0d","#c4202f",0),bb:1},
 {id:2,s:"Fútbol",a:"Cusco FC",b:"Alianza Lima",ca:["#d02a2a","CF"],cb:["#14307a","AL"],t:"Hoy 18:30",o:[2.27,3.20,3.25],art:scene("#0f3d2e","#04140e","#e53030",1,"#ff5a3c"),bb:1},
 {id:3,s:"Fútbol",a:"Cagliari",b:"Juventus",ca:["#b0172d","CA"],cb:["#111","JU"],t:"67'",live:1,sc:[1,0],o:[1.44,3.55,11],art:scene("#2a2a30","#0b0b0e","#f1f1f1",0)},
-{id:4,s:"Tenis",a:"C. Alcaraz",b:"J. Sinner",ca:["#e8b400","CA"],cb:["#2a7de1","JS"],t:"2.º set",live:1,sc:[1,0],o:[1.95,null,1.85]},
+{id:4,s:"Tenis",a:"C. Alcaraz",b:"J. Sinner",ca:["#e8b400","CA"],cb:["#2a7de1","JS"],t:"2.º set",live:1,sc:[1,0],o:[1.95,null,1.85],art:scene("#12263a","#050b12","#2a7de1",1)},
 {id:5,s:"Básquet",a:"Lakers",b:"Celtics",ca:["#6b3fa0","LA"],cb:["#118a45","BO"],t:"Q3 04:12",live:1,sc:[78,81],o:[2.60,null,1.52]},
 {id:6,s:"Fútbol",a:"Universitario",b:"Sporting Cristal",ca:["#b88a00","UN"],cb:["#2aa1e0","SC"],t:"Sáb 18:00",o:[2.20,3.15,3.30]},
 {id:7,s:"Fútbol",a:"Real Madrid",b:"Barcelona",ca:["#ccc","RM"],cb:["#a01d4d","FB"],t:"Dom 15:00",o:[2.35,3.60,2.80]},
@@ -170,10 +426,9 @@ var cur="Popular",live=1,picks={},lab=["1","X","2"];
 /* ESCUDOS: guarda cada escudo en img/escudos/nombre-del-equipo.png (minúsculas, sin tildes, con guiones). Si no existe, se muestran las iniciales. */
 function slug(n){return n.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
 function cr(c,n,lg){return '<span class="crest" style="background:'+c[0]+'">'+c[1]+'<img src="'+(lg||'img/escudos/'+slug(n)+'.png')+'" alt="" onload="this.parentNode.classList.add(\'ok\')" onerror="this.remove()"></span>'}
-function ob(m,small){if(m.o.every(function(q){return q===null}))return '<div class="ob"><span class="nq">Cuotas no disponibles</span></div>';return '<div class="ob">'+m.o.map(function(q,i){if(q===null)return '<span style="flex:1"></span>';var on=picks[m.id]===i;return '<button class="o'+(on?' sel':'')+'" data-m="'+m.id+'" data-i="'+i+'" aria-pressed="'+on+'">'+(small?'<small>'+lab[i]+'</small>':'<span>'+lab[i]+'</span>')+'<b>'+q.toFixed(2)+'</b></button>'}).join('')+'</div>'}
+function ob(m,small){if(m.o.every(function(q){return q===null}))return '<div class="ob"><span class="nq">Cuotas no disponibles</span></div>';return '<div class="ob">'+m.o.map(function(q,i){if(q===null)return '<span style="flex:1"></span>';var on=picks[m.id]===i;return '<button class="o'+(on?' sel':'')+'" data-m="'+m.id+'" data-i="'+i+'" aria-pressed="'+on+'">'+(small?'<small>'+(m.lab||lab)[i]+'</small>':'<span>'+(m.lab||lab)[i]+'</span>')+'<b>'+q.toFixed(2)+'</b></button>'}).join('')+'</div>'}
 function car(){
- var h=Mx.filter(function(m){return m.art}).map(function(m){return '<div class="mc">'+m.art+(IMG[m.id]?'<img class="art" src="'+IMG[m.id]+'" alt="'+m.a+' vs '+m.b+'" onerror="this.remove()">':'')+'<div class="ov"></div><span class="chip">▶ '+m.t+'</span><div class="in">'+(m.bb?'<span class="bb">⚡ BAMBI BOOST 25%</span>':'')+'<div class="tm">'+cr(m.ca,m.a,m.la)+m.a+'</div><div class="tm">'+cr(m.cb,m.b,m.lb)+m.b+'</div>'+ob(m)+'</div></div>'}).join('');
- h+='<div class="mc pr"><svg class="art" viewBox="0 0 340 262" preserveAspectRatio="xMidYMid slice">'+(function(){var s='<circle cx="270" cy="60" r="120" fill="#fff" opacity=".12"/>';for(var i=0;i<60;i++)s+='<circle cx="'+((i*37)%340)+'" cy="'+(130+(i*17)%130)+'" r="'+(5+i%6)+'" fill="'+(i%3?'#c8ff4a':'#fff')+'" opacity=".55"/>';return s})()+'<use href="#deer" x="170" y="20" width="170" height="170" style="color:#fff" opacity=".9"/></svg><div class="in"><h3>Juega y mira<br>el torneo<br>en bambibet</h3></div></div>';
+ var h=Mx.filter(function(m){return m.art}).sort(function(a,b){return (a.live||0)-(b.live||0)}).map(function(m){return '<div class="mc">'+m.art+(IMG[m.id]?'<img class="art" src="'+IMG[m.id]+'" alt="'+m.a+' vs '+m.b+'" onerror="this.remove()">':'')+'<div class="ov"></div>'+(m.live?'<span class="chip lv"><i class="rd w"></i>EN VIVO '+m.t+'</span>':'<span class="chip">'+m.t+'</span>')+'<div class="in">'+(m.bb?'<span class="bb">Cuota Turbo +25%</span>':'')+'<div class="tm">'+cr(m.ca,m.a,m.la)+m.a+'</div><div class="tm">'+cr(m.cb,m.b,m.lb)+m.b+'</div>'+ob(m)+'</div></div>'}).join('');
  $("car").innerHTML=h}
 function tiles(){
  var T=[["#0a8f4e","#064d2a","¡Misión combinada!",'<path d="M0 90l172-40v70H0z" fill="#fff" opacity=".2"/><circle cx="120" cy="40" r="22" fill="none" stroke="#fff" stroke-width="5"/><circle cx="120" cy="40" r="8" fill="#fff"/>'],
@@ -184,14 +439,19 @@ function tiles(){
  $("tiles").innerHTML=T.map(function(t,i){return '<div class="tile"><svg viewBox="0 0 172 120" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="t'+i+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="'+t[0]+'"/><stop offset="1" stop-color="'+t[1]+'"/></linearGradient></defs><rect width="172" height="120" fill="url(#t'+i+')"/>'+t[3]+'</svg><span>'+t[2]+'</span></div>'}).join('')}
 function list(){
  $("pills").innerHTML=pills.map(function(p){return '<button data-p="'+p+'" class="'+(p==cur?'on':'')+'">'+ico[p]+' '+p+'</button>'}).join('');
- var L=Mx.filter(function(m){return !!m.live==!!live&&(cur=="Popular"||m.s==cur||(cur=="Básquetbol"&&m.s=="Básquet"))});
- $("list").innerHTML=L.length?L.map(function(m){return '<div class="mr"><div class="st">'+(m.live?'<b>⚡ EN VIVO</b>':'')+m.t+'</div><div class="tt"><div><span>'+cr(m.ca,m.a,m.la)+m.a+'</span>'+(m.sc?'<em>'+m.sc[0]+'</em>':'')+'</div><div><span>'+cr(m.cb,m.b,m.lb)+m.b+'</span>'+(m.sc?'<em>'+m.sc[1]+'</em>':'')+'</div></div>'+ob(m,1)+'</div>'}).join(''):'<p class="em">No hay partidos en esta categoría ahora. Prueba con otro deporte.</p>'}
+ var F=Mx.filter(function(m){return cur=="Popular"||m.s==cur||(cur=="Básquetbol"&&m.s=="Básquet")});
+ function row(m){return '<div class="mr"><div class="st">'+(m.live?'<b>EN VIVO</b>':'')+m.t+(m.mk?'<br>'+m.mk:'')+'</div><div class="tt"><div><span>'+cr(m.ca,m.a,m.la)+m.a+'</span>'+(m.sc?'<em>'+m.sc[0]+'</em>':'')+'</div><div><span>'+cr(m.cb,m.b,m.lb)+m.b+'</span>'+(m.sc?'<em>'+m.sc[1]+'</em>':'')+'</div></div>'+ob(m,1)+'</div>'}
+ var H=F.filter(function(m){return !m.live}),V=F.filter(function(m){return m.live});
+ $("list").innerHTML=H.length?H.map(row).join(''):'<p class="em">No hay más partidos programados hoy en esta categoría.</p>';
+ $("listlive").innerHTML=V.length?V.map(row).join(''):'<p class="em">No hay partidos en vivo en este momento.</p>';
+ $("nh").textContent=H.length;$("nv").textContent=V.length}
 function slip(){
- var ids=Object.keys(picks),tq=1;
- $("slip").innerHTML=ids.length?ids.map(function(id){var m=Mx.filter(function(x){return x.id==id})[0],i=picks[id];tq*=m.o[i];return '<div class="si"><span>'+(i==1?"Empate":i==0?m.a:m.b)+'</span><b>'+m.o[i].toFixed(2)+'</b><small>Resultado final · '+m.a+' vs '+m.b+'</small><button data-x="'+id+'" aria-label="Quitar selección">×</button></div>'}).join('')+'<p class="em">Cuota total: <b>'+tq.toFixed(2)+'</b></p>':'<p class="em">No tienes apuestas abiertas en este momento</p>';
+ var ids=Object.keys(picks),tq=1,cbp=ids.length>=8?30:ids.length>=5?15:ids.length>=3?5:0;window.CB=(1+cbp/100)*(BSON&&bsAvail()?1.1:1);document.querySelectorAll(".tr").forEach(function(e){e.classList.toggle("on",+e.dataset.p==cbp)});
+ $("slip").innerHTML=ids.length?ids.map(function(id){var m=Mx.filter(function(x){return x.id==id})[0],i=picks[id];tq*=m.o[i];return '<div class="si"><span>'+(m.lab?m.lab[i]:(i==1?"Empate":i==0?m.a:m.b))+'</span><b>'+m.o[i].toFixed(2)+'</b><small>'+(m.mk||'Resultado final')+' · '+m.a+' vs '+m.b+'</small><button data-x="'+id+'" aria-label="Quitar selección">×</button></div>'}).join('')+'<p class="em">Cuota total: <b>'+tq.toFixed(2)+'</b>'+(cbp?' · Combinada Plus <b>+'+cbp+'%</b>':'')+'</p>':'<p class="em">No tienes apuestas abiertas en este momento</p>';
  window.TQ=ids.length?tq:0;
- var st=parseFloat($("st").value)||0;$("wn").value=TQ?(st*TQ).toFixed(2):"";
- $("go").disabled=!TQ||st<1}
+ var fb=FBON&&fbList().length?fbList()[0]:null;if(fb)$("st").value=fb.a;$("st").disabled=!!fb;
+ var st=parseFloat($("st").value)||0;$("wn").value=TQ?(fb?st*(TQ*CB-1):st*TQ*CB).toFixed(2):"";rewR();
+ $("go").disabled=!TQ||st<1;fab(ids.length)}
 function all(){car();list();slip()}
 document.addEventListener("click",function(e){
  var t=e.target.closest("button");if(!t)return;
@@ -199,10 +459,10 @@ document.addEventListener("click",function(e){
  else if(t.dataset.x){delete picks[t.dataset.x];all()}
  else if(t.dataset.p){cur=t.dataset.p;list()}
  else if(t.closest("#seg")){live=+t.dataset.v;document.querySelectorAll("#seg button").forEach(function(b){b.classList.toggle("on",b==t)});list()}
- else if(t.id=="go"){var n=Object.keys(picks).length;picks={};all();$("ok").textContent="¡Apuesta realizada! "+n+" selección"+(n>1?"es":"")+". Mucha suerte."}
+ else if(t.id=="go"){if(!ME){authOpen("in","Ingresa o crea tu cuenta para apostar.");return}var n=Object.keys(picks).length;if(!ganar(n))return;picks={};all();$("ok").textContent="¡Apuesta realizada! "+n+" selección"+(n>1?"es":"")+". Mucha suerte."}
 });
 $("st").addEventListener("input",slip);
-$("wn").addEventListener("input",function(){var w=parseFloat($("wn").value)||0;if(TQ)$("st").value=(w/TQ).toFixed(2);$("go").disabled=!TQ||(parseFloat($("st").value)||0)<1});
+$("wn").addEventListener("input",function(){var w=parseFloat($("wn").value)||0;if(TQ&&!$("st").disabled)$("st").value=(w/TQ/CB).toFixed(2);$("go").disabled=!TQ||(parseFloat($("st").value)||0)<1});
 
 /* ===== CONEXIÓN CON API-FOOTBALL ===== */
 var DEMO=Mx.slice();
@@ -214,39 +474,429 @@ async function api(path){
  var msg=Array.isArray(e)?e[0]:(e&&Object.keys(e).length?Object.values(e)[0]:null);
  if(msg)throw new Error(msg);
  j.left=left;return j}
-function hora(d){return "Hoy "+new Date(d).toLocaleTimeString("es-PE",{hour:"2-digit",minute:"2-digit"})}
+function hora(d){var x=new Date(d),f=function(a){return a.toLocaleDateString("en-CA")},t=x.toLocaleTimeString("es-PE",{hour:"2-digit",minute:"2-digit"});
+ return (f(x)==f(new Date())?"Hoy ":f(x)==f(new Date(Date.now()+864e5))?"Mañana ":x.toLocaleDateString("es-PE",{day:"2-digit",month:"2-digit"})+" ")+t}
 function aplicar(fx,od,left,cache){
  var L=["1H","HT","2H","ET","BT","P","LIVE","INT"];
- var arts=[scene("#0f3d2e","#04140e","#19c26a",0),scene("#2a2a30","#0b0b0e","#f1f1f1",1),scene("#3a1b22","#150a0d","#c4202f",0)];
+ var arts=[scene("#0f3d2e","#04140e","#19c26a",0),scene("#2a2a30","#0b0b0e","#f1f1f1",1),scene("#3a1b22","#150a0d","#c4202f",0),scene("#12263a","#050b12","#2a7de1",1)];
+ var hs=new Date().toLocaleDateString("en-CA");
  Mx=fx.filter(function(f){return L.indexOf(f.st)>-1||f.st=="NS"}).map(function(f){var lv=L.indexOf(f.st)>-1;
-  return {id:f.id,s:"Fútbol",lg:f.lg,a:f.a,b:f.b,la:f.la,lb:f.lb,ca:["#4b5563",f.a.slice(0,2).toUpperCase()],cb:["#4b5563",f.b.slice(0,2).toUpperCase()],t:lv?(f.el!=null?f.el+"'":"En vivo"):hora(f.date),live:lv?1:0,sc:lv?[f.ga||0,f.gb||0]:null,o:od[f.id]||[null,null,null]}});
+  return {id:f.id,s:"Fútbol",lg:f.lg,a:f.a,b:f.b,la:f.la,lb:f.lb,ca:["#4b5563",f.a.slice(0,2).toUpperCase()],cb:["#4b5563",f.b.slice(0,2).toUpperCase()],t:lv?(f.el!=null?f.el+"'":"En vivo"):hora(f.date),dia:new Date(f.date).toLocaleDateString("en-CA")==hs?0:1,live:lv?1:0,sc:lv?[f.ga||0,f.gb||0]:null,o:od[f.id]||[null,null,null]}});
  Mx.sort(function(x,y){return (y.live-x.live)||((y.o[0]!=null)-(x.o[0]!=null))});
- Mx.filter(function(m){return m.o[0]!=null}).slice(0,3).forEach(function(m,i){m.art=arts[i]});
+ var IMP=["Libertadores","Sudamericana","Champions","Premier","La Liga","Liga 1","Serie A","Bundesliga","Ligue 1","Brasileir","Liga Profesional","Europa League","Eliminatorias","World Cup"],tarde=new Date().getHours()>=20;
+ function imp(m){var k=IMP.findIndex(function(x){return (m.lg||"").indexOf(x)>-1});return k<0?99:k}
+ function pool(lv){var P=Mx.filter(function(m){return !!m.live==lv});
+  if(!lv){var pf=P.filter(function(m){return tarde?m.dia>0:m.dia==0});if(pf.length)P=pf}
+  return P.sort(function(a,b){return ((a.o[0]==null)-(b.o[0]==null))||(imp(a)-imp(b))})}
+ pool(false).slice(0,2).concat(pool(true).slice(0,2)).forEach(function(m,i){m.art=arts[i]});
  picks={};pills=["Popular","Fútbol"];cur="Popular";
  live=Mx.some(function(m){return m.live})?1:0;
  document.querySelectorAll("#seg button").forEach(function(b){b.classList.toggle("on",+b.dataset.v==live)});
  all();
  banner("Datos reales de API-Football · "+Mx.length+" partidos"+(left?" · consultas restantes hoy: "+left:"")+(cache?" · guardados hace menos de 10 min":""),1)}
 async function cargarAPI(){
- if(!API_KEY||API_KEY.indexOf("PEGA")==0){banner("Modo demostración: pega tu clave en la línea API_KEY (al inicio del script) para ver partidos reales.");return}
+ if(!API_KEY){banner("Modo demostración: pulsa el botón ⚙ (arriba a la derecha) y pega tus claves para ver datos reales.");return}
  var key="bb_cache_v1",c=null;
  try{c=JSON.parse(localStorage.getItem(key)||"null")}catch(e){}
  if(c&&Date.now()-c.ts<600000&&c.k==API_KEY.slice(-6)){aplicar(c.fx,c.od,c.left,1);return}
  banner("Cargando partidos reales…",1);
  try{
   var hoy=new Date().toLocaleDateString("en-CA"),tz="&timezone=America/Lima";
-  var a=await api("/fixtures?live=all"+tz),b=await api("/fixtures?date="+hoy+tz),left=b.left;
+  var tarde=new Date().getHours()>=20,man=new Date(Date.now()+864e5).toLocaleDateString("en-CA");
+  var a=await api("/fixtures?live=all"+tz),b=await api("/fixtures?date="+hoy+tz),left=b.left,b2=tarde?await api("/fixtures?date="+man+tz):{response:[]};
   var ids={},fx=[];
-  a.response.concat(b.response).forEach(function(f){if(ids[f.fixture.id])return;ids[f.fixture.id]=1;
+  a.response.concat(b.response,b2.response).forEach(function(f){if(ids[f.fixture.id])return;ids[f.fixture.id]=1;
    fx.push({id:f.fixture.id,a:f.teams.home.name,b:f.teams.away.name,la:f.teams.home.logo,lb:f.teams.away.logo,lg:f.league.name,st:f.fixture.status.short,el:f.fixture.status.elapsed,date:f.fixture.date,ga:f.goals.home,gb:f.goals.away})});
   var od={};
-  for(var p=1;p<=2;p++){
-   var o=await api("/odds?date="+hoy+"&bet=1&page="+p);left=o.left||left;
+  var dts=tarde?[hoy,man]:[hoy];
+  for(var di=0;di<dts.length;di++)for(var p=1;p<=(di?1:2);p++){
+   var o=await api("/odds?date="+dts[di]+"&bet=1&page="+p);left=o.left||left;
    o.response.forEach(function(x){var bk=x.bookmakers&&x.bookmakers[0],bt=bk&&bk.bets.filter(function(t){return t.id==1})[0];
     if(bt){var v={};bt.values.forEach(function(y){v[y.value]=parseFloat(y.odd)});od[x.fixture.id]=[v.Home||null,v.Draw||null,v.Away||null]}});
    if(!o.paging||o.paging.current>=o.paging.total)break}
   try{localStorage.setItem(key,JSON.stringify({ts:Date.now(),k:API_KEY.slice(-6),fx:fx,od:od,left:left}))}catch(e){}
   aplicar(fx,od,left,0)
  }catch(e){banner("No se pudo cargar datos reales: "+(e.name=="TypeError"?"sin conexión o el navegador bloqueó la llamada (CORS)":e.message)+". Mostrando datos de ejemplo.")}}
-car();tiles();list();slip();cargarAPI();
+
+/* ===== THE ODDS API: más mercados ===== */
+function ox(){var d=$("ox");
+ if(!ODDS_KEY){d.innerHTML='<small>Para ver más mercados (Más/Menos), agrega tu clave de The Odds API en el botón ⚙ de arriba.</small>';return}
+ d.innerHTML='<select id="lg" aria-label="Liga"><option>Cargando ligas…</option></select><button class="ld" id="ld">Cargar cuotas y mercados</button><small>Cada carga gasta 2 créditos de tus 500 del mes.</small>'}
+async function odds(path){
+ var r=await fetch("https://api.the-odds-api.com/v4"+path+(path.indexOf("?")>-1?"&":"?")+"apiKey="+ODDS_KEY);
+ var left=r.headers.get("x-requests-remaining"),j=await r.json();
+ if(!r.ok)throw new Error(j.message||("Error "+r.status));
+ return {j:j,left:left}}
+function oerr(e){banner("The Odds API: "+(e.name=="TypeError"?"sin conexión o el navegador bloqueó la llamada (CORS)":e.message))}
+async function cargarDeportes(){
+ var L=null;
+ try{var c=JSON.parse(localStorage.getItem("bb_sp")||"null");if(c&&Date.now()-c.ts<21600000)L=c.L}catch(e){}
+ try{
+  if(!L){var d=await odds("/sports/");
+   L=d.j.filter(function(x){return x.active&&!x.has_outrights&&(x.group=="Soccer"||x.key=="basketball_nba")}).map(function(x){return {k:x.key,t:x.title}});
+   try{localStorage.setItem("bb_sp",JSON.stringify({ts:Date.now(),L:L}))}catch(e){}}
+  $("lg").innerHTML=L.length?L.map(function(x){return '<option value="'+x.k+'">'+x.t+'</option>'}).join(''):'<option value="">Sin ligas activas</option>'
+ }catch(e){oerr(e)}}
+function mkts(e,sport){
+ var nba=sport.indexOf("basketball")==0,bk=e.bookmakers||[],out=[];
+ function pick(key){for(var i=0;i<bk.length;i++){var m=bk[i].markets.filter(function(x){return x.key==key})[0];if(m)return m}return null}
+ var h=pick("h2h"),t=pick("totals");
+ var base={s:nba?"Básquet":"Fútbol",lg:e.sport_title,a:e.home_team,b:e.away_team,ca:["#4b5563",e.home_team.slice(0,2).toUpperCase()],cb:["#4b5563",e.away_team.slice(0,2).toUpperCase()],src:1};
+ var st=new Date(e.commence_time),ya=st<new Date();
+ base.live=ya?1:0;base.t=ya?"En juego":st.toLocaleString("es-PE",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"});
+ if(h){var o=[null,null,null];h.outcomes.forEach(function(x){if(x.name==e.home_team)o[0]=x.price;else if(x.name==e.away_team)o[2]=x.price;else o[1]=x.price});out.push(Object.assign({id:e.id,o:o,mk:"Resultado final"},base))}
+ if(t){var pts=t.outcomes.map(function(x){return x.point}),pt=pts.indexOf(2.5)>-1?2.5:pts[0],ov=null,un=null;
+  t.outcomes.forEach(function(x){if(x.point==pt){if(x.name=="Over")ov=x.price;else un=x.price}});
+  out.push(Object.assign({id:e.id+"-ou",o:[ov,null,un],lab:["Más "+pt,"","Menos "+pt],mk:"Más/Menos "+(nba?"puntos":"goles")},base))}
+ return out}
+async function cargarMercados(){
+ var k=$("lg").value;if(!k)return;
+ var key="bb_o_"+k,ev=null,left=null,cache=0;
+ try{var c=JSON.parse(localStorage.getItem(key)||"null");if(c&&Date.now()-c.ts<1800000){ev=c.ev;left=c.left;cache=1}}catch(e){}
+ try{
+  if(!ev){banner("Cargando cuotas…",1);var d=await odds("/sports/"+k+"/odds?regions=eu&markets=h2h,totals&oddsFormat=decimal");ev=d.j;left=d.left;
+   try{localStorage.setItem(key,JSON.stringify({ts:Date.now(),ev:ev,left:left}))}catch(e){}}
+  var items=[];ev.forEach(function(e){items=items.concat(mkts(e,k))});
+  var nba=k.indexOf("basketball")==0;
+  Mx=items.concat(Mx.filter(function(m){return !m.src}));
+  pills=nba?["Popular","Fútbol","Básquetbol"]:["Popular","Fútbol"];cur=nba?"Básquetbol":"Fútbol";
+  live=0;document.querySelectorAll("#seg button").forEach(function(b){b.classList.toggle("on",+b.dataset.v==0)});
+  picks={};all();
+  banner(ev.length?("The Odds API · "+ev.length+" partidos"+(left?" · créditos restantes del mes: "+left:"")+(cache?" · guardados hace menos de 30 min":"")):"No hay partidos con cuotas ahora en esta liga. Prueba con otra.",1)
+ }catch(e){oerr(e)}}
+document.addEventListener("click",function(e){
+ var t=e.target.closest("button");if(!t)return;
+ if(t.id=="ld")cargarMercados();
+ else if(t.id=="gear"){$("k1").value=API_KEY;$("k2").value=ODDS_KEY;$("kd").showModal()}
+ else if(t.id=="kx")$("kd").close();
+ else if(t.id=="kb2"){try{localStorage.removeItem("bb_keys");localStorage.removeItem("bb_cache_v1")}catch(x){}location.reload()}
+ else if(t.id=="ks"){try{localStorage.setItem("bb_keys",JSON.stringify({f:$("k1").value.trim(),o:$("k2").value.trim()}));localStorage.removeItem("bb_cache_v1")}catch(x){}location.reload()}
+});
+
+
+/* ===== NIVELES, MISIONES Y TORNEO (simulado, se guarda en tu navegador) ===== */
+var LV=[["Suplente",0,"Apuesta gratis de S/ 10 para empezar"],["Titular",100,"Apuesta gratis de S/ 20"],["Capitán",500,"Cashback del 5% cada semana"],["Crack",2000,"Cuota potenciada +10% cada semana"],["Leyenda",10000,"Cashback del 10% y S/ 100 en apuestas gratis al mes"]];
+var MS=[["Haz 3 apuestas","bets",3,50],["Arma una combinada de 3 o más selecciones","combos",1,80],["Apuesta en un partido en vivo","live",1,60]];
+var RV=[["Lucho_77",4820],["MarCiélago",3715],["Neo.Bet",2990],["ValeGol",2210],["Kike10",1540],["Sofi_9",980]];
+var S={ac:{},xp:0,day:"",bets:0,combos:0,live:0,done:[],h:[],bal:0,bono:0,req:0,rt:0,dep:0,bexp:0,mv:[],pref:{},lim:0,dh:{},ex:0,wk:{},fb:[],fg:-1,fm:"",bu:""};
+function hoy(){return new Date().toLocaleDateString("en-CA")}
+function nivel(x){var n=0;LV.forEach(function(l,i){if(x>=l[1])n=i});return n}
+function toast(t){var d=$("toast");d.textContent=t;d.classList.add("on");clearTimeout(window.tt);window.tt=setTimeout(function(){d.classList.remove("on")},4500)}
+function save(){try{localStorage.setItem(xk(),JSON.stringify(S))}catch(e){}}
+function ganar(n){
+ var st=parseFloat($("st").value)||0,antes=nivel(S.xp),msg=[];
+ if(S.ex>Date.now()){toast("Tu cuenta está en autoexclusión hasta el "+fdate(S.ex)+".");return false}
+ var fb=FBON&&fbList().length?fbList()[0]:null,bsOn=BSON&&bsAvail();
+ if(!fb&&st>S.bal+S.bono+1e-9){toast("Saldo insuficiente. Deposita para apostar.");dep();return false}
+ var tq=1;Object.keys(picks).forEach(function(id){var m=Mx.filter(function(x){return x.id==id})[0];if(m)tq*=m.o[picks[id]]});
+ if(fb){S.fb.splice(S.fb.indexOf(fb),1);mov("Apuesta gratis de S/ "+fb.a,0);FBON=false}else{var uc=Math.min(S.bal,st);S.bal-=uc;S.bono-=st-uc;mov("Apuesta "+(n>1?"combinada":"simple"),-st);acc("stk",st);S.wk.net=(S.wk.net||0)+st}
+ if(bsOn){S.bu=wkKey();BSON=false}
+ window.LFB=fb?1:0;
+ if(S.req>0&&!fb){if(n>=2?tq>=2:tq>=1.8)S.req=Math.max(0,S.req-st);else msg.push("Esta apuesta no suma al rollover (cuota mínima: "+(n>=2?"2.00 en combinadas":"1.80 en simples")+")")}
+ if(S.rt>0&&S.bono<=0.005){S.bono=0;S.req=0;S.rt=0;msg.push("Tu saldo de bono se agotó")}
+ else if(S.rt>0&&S.req<=0.005){mov("Bono liberado a saldo real",S.bono);acc("promo",S.bono);S.bal+=S.bono;S.bono=0;S.req=0;S.rt=0;msg.push("¡Rollover completado! Tu bono pasó a saldo real")}
+ var lv=Object.keys(picks).some(function(id){var m=Mx.filter(function(x){return x.id==id})[0];return m&&m.live});
+ rec(st);acc("nb",1);S.xp+=fb?0:Math.round(st);S.bets++;if(n>=3)S.combos++;if(lv)S.live++;
+ MS.forEach(function(m,i){if(S.done.indexOf(i)<0&&S[m[1]]>=m[2]){S.done.push(i);S.xp+=m[3];msg.push("Misión cumplida +"+m[3]+" XP")}});
+ msg=msg.concat(wkAdd(n,fb?0:st));var d=nivel(S.xp);if(d>antes){msg.push("¡Nivel "+(d+1)+": "+LV[d][0]+"! Desbloqueaste "+LV[d][2]);grant()}
+ if(msg.length)toast(msg.join(" · "));
+ save();xp();saldo();return true}
+function xp(){
+ var n=nivel(S.xp),l=LV[n],nx=LV[n+1],pct=nx?Math.min(100,(S.xp-l[1])/(nx[1]-l[1])*100):100;
+ $("lvc").innerHTML='<span><b>Nv '+(n+1)+'</b> '+l[0]+'</span><i><u style="width:'+pct+'%"></u></i>';
+ $("lad").innerHTML=LV.map(function(v,i){var c=i<n?"ok":i==n?"cur":"lock";return '<li class="nd '+c+'"><span class="dot">'+(i<n?"✓":i==n?(i+1):"🔒")+'</span><b>'+v[0]+'</b><small>'+(v[1]?v[1].toLocaleString("es-PE")+" XP":"Empiezas aquí")+'</small><em>'+v[2]+'</em></li>'}).join('');
+ $("lf").style.width=((n+(nx?pct/100:0))/(LV.length-1)*100)+"%";
+ $("lt").textContent=nx?"Te faltan "+(nx[1]-S.xp)+" XP para "+nx[0]:"Llegaste al nivel máximo";
+ $("xpn").textContent=S.xp;
+ $("ms").innerHTML=MS.map(function(m,i){var p=Math.min(S[m[1]],m[2]),d=S.done.indexOf(i)>-1;return '<div class="ms'+(d?' ok':'')+'"><b>'+m[0]+'</b><i><u style="width:'+(p/m[2]*100)+'%"></u></i><small>'+p+'/'+m[2]+' · '+(d?'Completada':'+'+m[3]+' XP')+'</small></div>'}).join('');
+ var all=RV.map(function(r){return [r[0],r[1],0]}).concat([["Tú",S.xp,1]]).sort(function(a,b){return b[1]-a[1]}),rows="";
+ all.forEach(function(r,i){if(i<5||r[2])rows+='<li class="'+(r[2]?'me':'')+'"><span>#'+(i+1)+'</span><b>'+r[0]+'</b><em>'+r[1].toLocaleString("es-PE")+' XP</em></li>'});
+ $("lb").innerHTML=rows;wkR()}
+function cd(){var d=new Date(),e=new Date(d);e.setDate(d.getDate()+((7-d.getDay())%7));e.setHours(23,59,59,0);if(e<d)e.setDate(e.getDate()+7);
+ var s=Math.floor((e-d)/1000),p=function(x){return String(x).padStart(2,"0")};
+ $("cd").textContent=Math.floor(s/86400)+"d "+p(Math.floor(s%86400/3600))+":"+p(Math.floor(s%3600/60))+":"+p(s%60)}
+function xpInit(){
+ try{var c=JSON.parse(localStorage.getItem(xk())||"null");if(c)S=Object.assign(S,c)}catch(e){}
+ if(S.day!=hoy()){S.day=hoy();S.bets=S.combos=S.live=0;S.done=[]}
+ var d0=new Date(),wk0=new Date(d0-((d0.getDay()+6)%7)*864e5).toLocaleDateString("en-CA");
+ if(S.wk.k&&S.wk.k!=wk0&&(S.wk.net||0)>0&&cbPct()>0){var cbk=Math.round(S.wk.net*cbPct())/100;S.bal+=cbk;acc("promo",cbk);mov("Cashback semanal ("+cbPct()+"%)",cbk);setTimeout(function(){toast("Cashback semanal: +S/ "+cbk.toFixed(2))},2500)}
+ if(S.wk.k!=wk0)S.wk={net:0,k:wk0,days:[0,0,0,0,0,0,0],bets:0,wins:0,sp:[],combo4:0,vol:0,cl:[],ch:0,rk:0};
+ if(S.bexp&&Date.now()>S.bexp&&S.bono>0){S.bono=0;S.req=0;S.rt=0;S.bexp=0;toast("Tu bono venció")}
+ if(ME){var gm=grant();if(gm.length)setTimeout(function(){toast(gm.join(" · "))},2500)}
+ if(S.pref&&S.pref.st){$("st").value=S.pref.st;slip()}
+ xp();cd();setInterval(cd,1000);saldo()}
+
+function showView(v,sc){["dp","ad"].forEach(function(i){var d=$(i);if(d.open)d.close()});if(v=="per"){if(!ME){authOpen("in");return}perfil(sc||"pan")}document.body.classList.remove("dr");$("pm").hidden=true;["dep","tor","bon","per"].forEach(function(k){$("v-"+k).hidden=k!=v});
+ document.body.classList.remove("sheet");document.querySelectorAll("nav [data-go]").forEach(function(a){a.classList.toggle("on",a.dataset.go==v&&!a.dataset.sc)});
+ window.scrollTo(0,0);if(sc&&v!="per")$(sc).scrollIntoView()}
+document.addEventListener("click",function(e){var a=e.target.closest("[data-go]");if(!a)return;e.preventDefault();showView(a.dataset.go,a.dataset.sc)});
+function fab(n){$("bdg").textContent=n;$("bdg").hidden=!n;$("fab").hidden=!n;$("fabt").textContent=n+(n==1?" selección":" selecciones");$("fabw").textContent=$("wn").value?"Ganas S/ "+$("wn").value:""}
+document.addEventListener("click",function(e){var t=e.target.closest("#bt,#fab,#cl,#bk");if(!t)return;document.body.classList.toggle("sheet",!(t.id=="cl"||t.id=="bk"))});
+
+/* ===== CUENTAS DE PRUEBA (se guardan solo en este navegador) ===== */
+function esc(t){var d=document.createElement("div");d.textContent=t;return d.innerHTML}
+async function hs(t){try{var b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(t));return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,"0")}).join("")}catch(e){var h=5381;for(var i=0;i<t.length;i++)h=(h*33)^t.charCodeAt(i);return "w"+(h>>>0).toString(16)}}
+function authOpen(m,msg){$("fi").hidden=m!="in";$("fr").hidden=m!="re";$("fv").hidden=m!="vf";$("ti").classList.toggle("on",m=="in");$("tr2").classList.toggle("on",m=="re");$("am").textContent=msg||"";if(m=="re"&&!$("rg_pm").value&&refc()){$("rg_pm").value=refc();$("rg_pmn").textContent="Código de referido aplicado: "+refc()}
+ if(!$("ad").open)$("ad").showModal()}
+function entrar(u){try{localStorage.setItem("bb_me",JSON.stringify({id:u.id,name:u.name,email:u.email,since:u.since}));sessionStorage.setItem("bb_w","1")}catch(e){}location.reload()}
+function salir(){try{localStorage.removeItem("bb_me")}catch(e){}location.reload()}
+function authUI(){$("gst").hidden=!!ME;$("usr").hidden=!ME;
+ if(ME){$("avl").textContent=ME.name.charAt(0).toUpperCase();$("avn").textContent=ME.name.split(" ")[0];
+  try{if(sessionStorage.getItem("bb_w")){sessionStorage.removeItem("bb_w");toast("Hola "+ME.name.split(" ")[0]+", ¡bienvenido a bambibet!")}}catch(e){}}}
+function rec(st){var sel=Object.keys(picks).map(function(id){var m=Mx.filter(function(x){return x.id==id})[0],i=picks[id];return m?(m.lab?m.lab[i]:(i==1?"Empate":i==0?m.a:m.b))+" ("+m.o[i].toFixed(2)+")":""}).filter(Boolean);
+ S.h.unshift({t:Date.now(),sel:sel,st:st,win:parseFloat($("wn").value)||0,s:"a",fb:window.LFB||0});S.h=S.h.slice(0,15)}
+$("fi").addEventListener("submit",async function(e){e.preventDefault();
+ var em=$("li_e").value.trim().toLowerCase(),h=await hs(em+"|"+$("li_p").value),u=USERS.filter(function(x){return x.email==em&&x.pass==h})[0];
+ if(!u){$("am").textContent="Correo o contraseña incorrectos.";return}entrar(u)});
+document.addEventListener("click",function(e){
+ var t=e.target.closest("button");
+ if(!e.target.closest(".usr"))$("pm").hidden=true;
+ if(!t)return;
+ if(t.id=="hr"||t.id=="tr2")authOpen("re");
+ else if(t.id=="hi"||t.id=="ti")authOpen("in");
+ else if(t.id=="ax")$("ad").close();
+ else if(t.id=="av")$("pm").hidden=!$("pm").hidden;
+ else if(t.id=="lo"||t.id=="lo2")salir();
+ else if(t.id=="del"){if(t.dataset.s){USERS=USERS.filter(function(x){return x.id!=ME.id});try{localStorage.setItem("bb_users",JSON.stringify(USERS));localStorage.removeItem(xk())}catch(x){}salir()}else{t.dataset.s=1;t.textContent="¿Seguro? Pulsa otra vez"}}
+});
+
+/* ===== REGISTRO COMPLETO, SMS DE PRUEBA, BILLETERA Y BONO ===== */
+var UD="Amazonas,Áncash,Apurímac,Arequipa,Ayacucho,Cajamarca,Callao,Cusco,Huancavelica,Huánuco,Ica,Junín,La Libertad,Lambayeque,Lima,Loreto,Madre de Dios,Moquegua,Pasco,Piura,Puno,San Martín,Tacna,Tumbes,Ucayali".split(",");
+var UP={"Amazonas":"Chachapoyas","Áncash":"Huaraz","Apurímac":"Abancay","Arequipa":"Arequipa,Camaná,Caravelí,Castilla,Caylloma,Condesuyos,Islay,La Unión","Ayacucho":"Huamanga","Cajamarca":"Cajamarca","Callao":"Callao","Cusco":"Cusco,Acomayo,Anta,Calca,Canas,Canchis,Chumbivilcas,Espinar,La Convención,Paruro,Paucartambo,Quispicanchi,Urubamba","Huancavelica":"Huancavelica","Huánuco":"Huánuco","Ica":"Ica,Chincha,Nasca,Palpa,Pisco","Junín":"Huancayo,Chanchamayo,Chupaca,Concepción,Jauja,Junín,Satipo,Tarma,Yauli","La Libertad":"Trujillo,Ascope,Bolívar,Chepén,Gran Chimú,Julcán,Otuzco,Pacasmayo,Pataz,Sánchez Carrión,Santiago de Chuco,Virú","Lambayeque":"Chiclayo,Ferreñafe,Lambayeque","Lima":"Lima,Barranca,Cajatambo,Canta,Cañete,Huaral,Huarochirí,Huaura,Oyón,Yauyos","Loreto":"Maynas","Madre de Dios":"Tambopata","Moquegua":"Mariscal Nieto","Pasco":"Pasco","Piura":"Piura,Ayabaca,Huancabamba,Morropón,Paita,Sechura,Sullana,Talara","Puno":"Puno","San Martín":"Moyobamba","Tacna":"Tacna","Tumbes":"Tumbes","Ucayali":"Coronel Portillo"};
+var US={"Lima|Lima":"Cercado de Lima,Ancón,Ate,Barranco,Breña,Carabayllo,Chaclacayo,Chorrillos,Cieneguilla,Comas,El Agustino,Independencia,Jesús María,La Molina,La Victoria,Lince,Los Olivos,Lurigancho,Lurín,Magdalena del Mar,Miraflores,Pachacámac,Pucusana,Pueblo Libre,Puente Piedra,Punta Hermosa,Punta Negra,Rímac,San Bartolo,San Borja,San Isidro,San Juan de Lurigancho,San Juan de Miraflores,San Luis,San Martín de Porres,San Miguel,Santa Anita,Santa María del Mar,Santa Rosa,Santiago de Surco,Surquillo,Villa El Salvador,Villa María del Triunfo","Callao|Callao":"Callao,Bellavista,Carmen de la Legua Reynoso,La Perla,La Punta,Mi Perú,Ventanilla","Arequipa|Arequipa":"Arequipa,Alto Selva Alegre,Cayma,Cerro Colorado,Characato,Chiguata,Jacobo Hunter,José Luis Bustamante y Rivero,La Joya,Mariano Melgar,Miraflores,Mollebaya,Paucarpata,Pocsi,Polobaya,Quequeña,Sabandía,Sachaca,San Juan de Siguas,San Juan de Tarucani,Santa Isabel de Siguas,Santa Rita de Siguas,Socabaya,Tiabaya,Uchumayo,Vitor,Yanahuara,Yarabamba,Yura","La Libertad|Trujillo":"Trujillo,El Porvenir,Florencia de Mora,Huanchaco,La Esperanza,Laredo,Moche,Poroto,Salaverry,Simbal,Víctor Larco Herrera"};
+function opts(a,ph){return '<option value="">'+ph+'</option>'+a.map(function(x){return '<option>'+x+'</option>'}).join('')}
+function ubi(w){
+ var d=$("rg_dp").value;
+ if(w=="d"){$("rg_c").innerHTML=opts((UP[d]?UP[d].split(","):[]).concat(d?["Otra (escribir)"]:[]),"Selecciona")}
+ var c=$("rg_c").value,l=US[d+"|"+c];
+ $("rg_c2").hidden=c.indexOf("Otra")!=0;
+ $("rg_s").hidden=!!c&&!l;$("rg_s2").hidden=!c||!!l;
+ if(!c||l)$("rg_s").innerHTML=opts(l?l.split(","):[],"Selecciona")}
+$("rg_dp").innerHTML=opts(UD,"Selecciona");$("rg_c").innerHTML=opts([],"Selecciona");$("rg_s").innerHTML=opts([],"Selecciona");
+$("rg_dp").addEventListener("change",function(){ubi("d")});$("rg_c").addEventListener("change",function(){ubi("c")});
+document.querySelectorAll(".tyc-c").forEach(function(e){e.innerHTML=$("tycl").innerHTML});
+var PR=null;
+function sms(){var a=new Uint32Array(1);crypto.getRandomValues(a);PR.code=String(100000+a[0]%900000);PR.exp=Date.now()+300000;PR.sent=Date.now();PR.tries=0;
+ $("vt").textContent="+51 "+PR.tel.replace(/(\d{3})(\d{3})(\d{3})/,"$1 $2 $3");
+ $("sms").innerHTML='<small>Mensaje de prueba (en un sistema real llegaría a tu celular)</small><br>bambibet: tu código de verificación es <b>'+PR.code+'</b>. Vence en 5 minutos. No lo compartas.'}
+$("fr").addEventListener("submit",async function(e){e.preventDefault();
+ var v=function(i){return $(i).value.trim()},nm=v("rg_n"),ap=v("rg_a"),dni=v("rg_d"),dp=v("rg_dp"),ci=v("rg_c").indexOf("Otra")==0?v("rg_c2"):v("rg_c"),ds=$("rg_s").hidden?v("rg_s2"):v("rg_s"),dr=v("rg_ad"),em=v("rg_e").toLowerCase(),tel=v("rg_t2").replace(/\s/g,""),pw=$("rg_p").value;
+ var bd=new Date($("rg_b").value),now=new Date(),age=now.getFullYear()-bd.getFullYear();if(now<new Date(now.getFullYear(),bd.getMonth(),bd.getDate()))age--;
+ var m="";
+ if(nm.length<2||ap.length<2)m="Escribe tus nombres y apellidos.";
+ else if(!/^\d{8}$/.test(dni))m="El DNI debe tener 8 dígitos.";
+ else if(isNaN(age)||age<18)m="Debes tener 18 años o más para registrarte.";
+ else if(!dp||!ci||!ds)m="Completa tu departamento, ciudad y distrito.";
+ else if(dr.length<5)m="Escribe tu dirección completa.";
+ else if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em))m="Escribe un correo válido.";
+ else if(!/^9\d{8}$/.test(tel))m="El celular debe tener 9 dígitos y empezar con 9.";
+ else if(pw.length<8||!/\d/.test(pw)||!/[A-Za-z]/.test(pw))m="La contraseña debe tener 8 caracteres o más, con letras y números.";
+ else if(pw!==$("rg_p2").value)m="Las contraseñas no coinciden.";
+ else if(!$("rg_t").checked)m="Debes confirmar que tienes 18 años y aceptar los términos.";
+ else if(v("rg_pm")&&!codeOk(v("rg_pm").toUpperCase()))m="Ese código no existe o todavía no está activo.";
+ else if(USERS.some(function(x){return x.email==em}))m="Ese correo ya tiene una cuenta. Prueba con Ingresar.";
+ else if(USERS.some(function(x){return x.dni==dni}))m="Ese DNI ya está registrado.";
+ else if(USERS.some(function(x){return x.tel==tel}))m="Ese celular ya está registrado.";
+ if(m){$("am").textContent=m;$("ad").scrollTop=0;return}
+ PR={name:nm+" "+ap,nom:nm,ape:ap,dni:dni,nac:$("rg_b").value,pais:"Perú",dep:dp,ciu:ci,dis:ds,dir:dr,email:em,tel:tel,pass:await hs(em+"|"+pw),promo:v("rg_pm").toUpperCase(),aff:v("rg_pm").toUpperCase(),bono:$("rg_bn").checked,mk:$("rg_m").checked,gen:v("rg_g"),pep:$("rg_pep").checked?1:0,since:Date.now()};
+ sms();$("vc").value="";authOpen("vf")});
+$("fv").addEventListener("submit",function(e){e.preventDefault();if(!PR)return;
+ var c=$("vc").value.trim();
+ if(Date.now()>PR.exp){$("am").textContent="El código venció. Pulsa Reenviar código.";return}
+ if(PR.tries>=5){$("am").textContent="Demasiados intentos. Pulsa Reenviar código.";return}
+ if(c!==PR.code){PR.tries++;$("am").textContent="Código incorrecto. Te quedan "+(5-PR.tries)+" intentos.";return}
+ if(PR.chg){var UU=U_();UU.tel=PR.tel;usave();PR=null;$("ad").close();toast("Celular actualizado y verificado");perfil();return}
+ var u=Object.assign({},PR,{id:Date.now().toString(36),verified:true});["code","exp","sent","tries"].forEach(function(k){delete u[k]});
+ USERS.push(u);try{localStorage.setItem("bb_users",JSON.stringify(USERS))}catch(x){}entrar(u)});
+function saldo(){if(ME){var t="S/ "+(S.bal+S.bono).toFixed(2);$("sal").textContent=t;$("ab").textContent=t}}
+function need(){return Math.max(0,((S.ac||{}).dep||0)-((S.ac||{}).stk||0))}
+function wallet(){var p=S.rt>0?Math.min(100,(1-S.req/S.rt)*100):0;
+ return '<div class="wal"><div><small>Saldo</small><b>S/ '+S.bal.toFixed(2)+'</b></div><div><small>Bono</small><b>S/ '+S.bono.toFixed(2)+'</b></div><div><small>Apuestas gratis</small><b>S/ '+fbList().reduce(function(a,f){return a+f.a},0).toFixed(2)+'</b></div><button class="b g" id="dpb">Depositar</button><button class="b" data-rt="1">Retirar</button></div>'+(S.rt>0?'<div class="rol"><small>Rollover: te faltan S/ '+S.req.toFixed(2)+' de S/ '+S.rt.toFixed(2)+'</small><i><u style="width:'+p+'%"></u></i></div>':'')+(need()>0.005?'<div class="rol"><small>Para poder retirar: te faltan S/ '+need().toFixed(2)+' por apostar (100% de tus depósitos)</small></div>':'')}
+function upd(){var a=parseFloat($("dm").value)||0,first=S.dep==0;$("dbw").hidden=!first;
+ var b=first&&$("dbc").checked?Math.min(a,500):0;
+ $("dsm").innerHTML=a<20?'<span class="er">El depósito mínimo es S/ 20.</span>':a>5000?'<span class="er">El máximo por depósito es S/ 5,000.</span>':b?'Recibirás <b>S/ '+b.toFixed(2)+'</b> de bono. Para retirar debes apostar <b>S/ '+((a+b)*5).toFixed(2)+'</b> (rollover x5).':'Se abonarán S/ '+a.toFixed(2)+' a tu saldo.'}
+function dep(){if(!ME){authOpen("in","Ingresa para depositar.");return}
+ $("dbc").checked=(USERS.filter(function(x){return x.id==ME.id})[0]||{}).bono!==false;upd();if(!$("dp").open)$("dp").showModal()}
+function depositar(){var a=parseFloat($("dm").value)||0;if(a<20||a>5000){upd();return}
+ if(S.ex>Date.now()){toast("Tu cuenta está en autoexclusión hasta el "+fdate(S.ex)+".");return}
+ var hk=hoy(),us=(S.dh[hk]||0);if(S.lim>0&&us+a>S.lim){toast("Superarías tu límite diario de depósito (S/ "+S.lim+").");return}S.dh[hk]=us+a;
+ var b=S.dep==0&&$("dbc").checked?Math.min(a,500):0;
+ S.bal+=a;S.dep++;acc("dep",a);if(!S.ac.fd)S.ac.fd=a;mov("Depósito ("+$("dmt").value+")",a);if(b){mov("Bono de bienvenida",b);S.bono+=b;S.rt=(a+b)*5;S.req=S.rt;S.bexp=Date.now()+30*864e5}
+ save();saldo();$("dp").close();
+ toast(b?"Depósito de S/ "+a+" + bono de S/ "+b+". Debes apostar S/ "+S.rt+" para retirar.":"Depósito de S/ "+a+" acreditado.");
+ if(!$("v-per").hidden)perfil()}
+$("dm").addEventListener("input",upd);$("dbc").addEventListener("change",upd);
+document.addEventListener("click",function(e){var t=e.target.closest("button");if(!t)return;
+ if(t.id=="sal"||t.id=="dpb"||t.id=="bdp")dep();
+ else if(t.id=="dx")$("dp").close();
+ else if(t.id=="dok")depositar();
+ else if(t.dataset.dm){$("dm").value=t.dataset.dm;upd()}
+ else if(t.id=="vr"){if(!PR)return;var w=Math.ceil((30000-(Date.now()-PR.sent))/1000);if(w>0)$("am").textContent="Espera "+w+" s para reenviar el código.";else{sms();$("am").textContent="Te enviamos un código nuevo."}}
+ else if(t.dataset.r){var b=S.h[+t.dataset.i];if(b&&b.s=="a"){b.s=t.dataset.r;if(b.s=="g"){var gw=b.fb?Math.max(0,b.win-b.st):b.win;S.bal+=gw;acc("win",gw);mov("Apuesta ganada"+(b.fb?" (gratis)":""),gw);S.wk.wins++;S.wk.net=(S.wk.net||0)-gw;var mm=wkCheck();if(mm.length)toast(mm.join(" · "))}save();saldo();xp();perfil()}}
+});
+
+/* ===== CENTRO DE CUENTA ===== */
+var PG="pan",PGO={},OP=null;
+var AM=[["pan","Mi panel"],["perfil","Mi perfil",[["dat","Mis datos"],["seg","Acceso y seguridad"],["pref","Preferencias de apuesta"],["jgo","Juego seguro"],["ver","Verificación"]]],["jug","Mis jugadas",[["ab","Abiertas"],["rs","Resueltas"]]],["din","Mi dinero",[["dpx","Depositar"],["rtx","Retirar"],["mov","Movimientos"]]],["pri","Privacidad"],["prm","Promos",[["rec","Mis recompensas"],["bn","Bono de bienvenida"],["niv","Niveles y misiones"],["tor","Torneo del fin de semana"]]]];
+var ICN={pan:'<path d="M4 20V10M10 20V4M16 20v-8M2 20h20"/>',perfil:'<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/>',jug:'<path d="M4 7h16v3a2 2 0 0 0 0 4v3H4v-3a2 2 0 0 0 0-4z"/><path d="M14 7v10"/>',din:'<rect x="3" y="6" width="18" height="14" rx="3"/><path d="M3 10h18M16 15h2"/>',pri:'<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',prm:'<rect x="4" y="9" width="16" height="11"/><rect x="3" y="6" width="18" height="3"/><path d="M12 6v14"/>',out:'<path d="M10 4H5v16h5M15 8l4 4-4 4M19 12H9"/>'};
+var TT={pan:"Mi panel",dat:"Mis datos",seg:"Acceso y seguridad",pref:"Preferencias de apuesta",jgo:"Juego seguro",ver:"Verificación",ab:"Apuestas abiertas",rs:"Apuestas resueltas",mov:"Movimientos",pri:"Privacidad",bn:"Bono de bienvenida",rec:"Mis recompensas"};
+var EQ=["Alianza Lima","Universitario","Sporting Cristal","Cusco FC","Melgar","Real Madrid","Barcelona","Boca Juniors","River Plate","Flamengo","Manchester City","Liverpool"];
+function U_(){return USERS.filter(function(x){return x.id==ME.id})[0]||{}}
+function usave(){try{localStorage.setItem("bb_users",JSON.stringify(USERS))}catch(e){}}
+function fdate(t){return new Date(t).toLocaleString("es-PE",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"})}
+function mov(c,a){S.mv=S.mv||[];S.mv.unshift({t:Date.now(),c:c,a:a});S.mv=S.mv.slice(0,40)}
+function ea(t){return esc(t).replace(/"/g,"&quot;")}
+function uname(U){var a=function(t){return (t||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z]/g,"")};return U.nom?a(U.nom.charAt(0))+a(U.ape.split(" ")[0]):a(ME.name.split(" ")[0])}
+function rw(k,l,v,ed,x){return '<div class="rw" id="rw_'+k+'"><div><small>'+l+'</small><b>'+v+'</b>'+(x||'')+'</div>'+(ed?'<button class="b" data-ed="'+k+'">Editar</button>':'')+'</div>'}
+function menu(){
+ return AM.map(function(g){var k=g[0],sb=g[2],gp=!!sb&&sb.some(function(x){return x[0]==PG}),on=PG==k||gp,op=OP==k;
+  return '<button class="mi'+(on?' on':'')+'" data-g="'+k+'"><span class="ic2"><svg viewBox="0 0 24 24">'+ICN[k]+'</svg></span>'+g[1]+(sb?'<i class="ch">'+(op?'▴':'▾')+'</i>':'')+'</button>'+(sb?'<div class="sub'+(op?' op':'')+'">'+sb.map(function(x){return '<button class="'+(PG==x[0]?'on':'')+'" data-q="'+x[0]+'">'+x[1]+'</button>'}).join('')+'</div>':'')}).join('')
+ +'<button class="mi" id="lo2"><span class="ic2"><svg viewBox="0 0 24 24">'+ICN.out+'</svg></span>Cerrar sesión</button>'}
+function bets(st){var L=S.h.map(function(b,i){return [b,i]}).filter(function(x){return st=="a"?x[0].s=="a":x[0].s!="a"});
+ return L.length?L.map(function(x){var b=x[0],i=x[1];return '<div class="hi"><div><b>'+b.sel.map(esc).join(" + ")+'</b><small>'+fdate(b.t)+'</small></div><div class="hr"><span>S/ '+b.st+'</span><small>'+(b.fb?'Apuesta gratis · ':'')+(b.s=="g"?'✓ Ganada: +S/ '+(b.fb?Math.max(0,b.win-b.st):b.win).toFixed(2):b.s=="p"?'Perdida':'Ganas S/ '+(b.fb?Math.max(0,b.win-b.st):b.win).toFixed(2))+'</small>'+(b.s=="a"?'<span class="rs"><button data-r="g" data-i="'+i+'">Ganó</button><button data-r="p" data-i="'+i+'">Perdió</button></span>':'')+'</div></div>'}).join(''):'<p class="em">'+(st=="a"?"No tienes apuestas abiertas.":"Aún no tienes apuestas resueltas.")+'</p>'}
+function pgs(p){var U=U_(),n=nivel(S.xp),sw=function(id,on){return '<label class="sw"><input type="checkbox" id="'+id+'"'+(on?' checked':'')+'><i></i></label>'};
+ if(p=="pan")return '<div class="pfh"><i class="pfa">'+esc(ME.name.charAt(0).toUpperCase())+'</i><div><h2 style="font-size:16px">'+esc(ME.name)+'</h2><span class="mu">'+esc(ME.email)+'</span></div></div><div class="stats"><div><b>Nv '+(n+1)+'</b><small>'+LV[n][0]+'</small></div><div><b>'+S.xp+'</b><small>XP</small></div><div><b>'+S.h.length+'</b><small>apuestas</small></div></div>'+wallet();
+ if(p=="dat"){var bd=U.nac?U.nac.split("-").reverse().join("/"):"—";
+  return rw("email","Correo electrónico",esc(U.email||ME.email),1)+rw("tel","Celular","+51 "+esc(U.tel||"—"),1,'<small class="ok2">Verificado por SMS ✓</small>')+rw("dir","Dirección",esc(U.dir||"—")+", "+esc(U.dis||"")+", "+esc(U.ciu||""),1)+rw("idi","Idioma","Español (Perú)",0)+rw("eq","Equipo favorito",esc(U.eq||"Sin elegir"),1)+rw("pep","Persona expuesta políticamente (PEP)",U.pep?"Soy PEP o familiar de una":"No soy PEP",1)
+  +'<details class="dt2"><summary>Datos personales</summary>'+rw("u","Nombre de usuario",esc(uname(U)))+rw("n","Nombre completo",esc(ME.name))+rw("g","Género",esc(U.gen||"No indicado"))+rw("b","Fecha de nacimiento",bd)+rw("na","Nacionalidad","Perú")+rw("td","Tipo de documento","DNI")+rw("nd","Número de documento",esc(U.dni||"—"))+'</details>'}
+ if(p=="seg")return '<p class="mu">Cambia tu contraseña cuando quieras.</p><div class="edw" style="margin-top:10px"><input id="pw0" type="password" placeholder="Contraseña actual" autocomplete="current-password"><input id="pw1" type="password" placeholder="Nueva contraseña (8+ con letras y números)" autocomplete="new-password"><input id="pw2" type="password" placeholder="Repite la nueva contraseña" autocomplete="new-password"><small class="er" id="eer"></small><button class="b g" data-sv="pw" style="align-self:flex-start">Actualizar contraseña</button></div>'+rw("ses","Sesión","Activa en este dispositivo",0)+rw("2f","Verificación en dos pasos","Próximamente",0);
+ if(p=="pref")return '<p class="mu">Ajusta cómo apuestas.</p>'+rw("fo","Formato de cuotas","Decimal",0)+'<div class="rw" style="display:block"><small>Monto por defecto (S/)</small><div class="frm"><input id="pst" type="number" min="1" value="'+(S.pref.st||30)+'"><button class="b g" data-sv="pref">Guardar</button></div></div>';
+ if(p=="jgo"){var us=S.dh[hoy()]||0;return '<p class="mu">Define tus propios límites. Se aplican de inmediato.</p>'+rw("l","Límite de depósito diario",S.lim?"S/ "+S.lim:"Sin límite",0,'<small>Depositado hoy: S/ '+us.toFixed(2)+'</small>')+'<div class="frm"><input id="lim" type="number" min="0" value="'+(S.lim||"")+'" placeholder="Monto en S/ (0 = sin límite)"><button class="b g" data-sv="lim">Guardar</button></div><div class="rw" style="display:block"><b>Autoexclusión</b><small>Pausa tu cuenta: no podrás apostar ni depositar hasta que termine el plazo.</small>'+(S.ex>Date.now()?'<p class="er">Activa hasta el '+fdate(S.ex)+'.</p>':'<div class="frm2"><button class="b" data-ax="1">24 horas</button><button class="b" data-ax="7">7 días</button><button class="b" data-ax="30">30 días</button></div>')+'</div><p class="mu">Si sientes que el juego se te está yendo de las manos, pide ayuda a un profesional o a alguien de confianza.</p>'}
+ if(p=="ver")return '<p class="mu">Estos pasos protegen tu cuenta y tus retiros.</p>'+rw("v1","Celular","+51 "+esc(U.tel||"—"),0,'<small class="ok2">Verificado por SMS ✓</small>')+rw("v2","Datos de identidad (DNI)",esc(U.dni||"—"),0,'<small class="ok2">Registrado ✓</small>')+rw("v3","Correo electrónico",esc(U.email||ME.email),0,U.cv?'<small class="ok2">Verificado ✓</small>':'<small class="no2">Pendiente</small>')+(U.cv?'':'<div class="frm2"><button class="b g" data-sv="cv">Enviar enlace de verificación</button></div>')+rw("v4","Foto del DNI","Próximamente",0);
+ if(p=="rec"){var f=fbList(),nx=LV[n+1];
+  return '<p class="mu">Aquí ves lo que ganaste por tu nivel.</p>'+(f.length?f.map(function(x){return rw("f"+x.exp,"Apuesta gratis de S/ "+x.a,esc(x.src),0,'<small>Vence el '+fdate(x.exp)+'</small>')}).join(''):'<p class="em">No tienes apuestas gratis ahora.</p>')+rw("cb","Cashback semanal",cbPct()?cbPct()+"% de tus pérdidas netas, se acredita cada lunes":"Se desbloquea en el nivel Capitán",0)+rw("bo","Cuota potenciada +10%",n>=3?(bsAvail()?"Disponible esta semana":"Ya la usaste esta semana"):"Se desbloquea en el nivel Crack",0)+'<p class="mu" style="margin-top:12px">Con una apuesta gratis cobras solo la ganancia, no se devuelve el monto apostado. Vence a los 7 días.'+(nx?' Próximo nivel: <b>'+nx[0]+'</b> ('+nx[1].toLocaleString("es-PE")+' XP): '+nx[2]+'.':'')+'</p>'}
+ if(p=="ab")return bets("a");
+ if(p=="rs")return bets("r");
+ if(p=="mov")return (S.mv&&S.mv.length?S.mv.map(function(m){return '<div class="mv"><div><b>'+esc(m.c)+'</b><small>'+fdate(m.t)+'</small></div><span class="'+(m.a>0?'pos':'neg')+'">'+(m.a>0?'+':'−')+'S/ '+Math.abs(m.a).toFixed(2)+'</span></div>'}).join(''):'<p class="em">Aún no tienes movimientos.</p>');
+ if(p=="pri")return '<div class="rw"><div><b>Promociones por correo y SMS</b><small>Ofertas, bonos y novedades.</small></div>'+sw("pmk",U.mk)+'</div><div class="rw" style="display:block"><b>Eliminar mi cuenta</b><small>Se borran tus datos de este navegador. No se puede deshacer.</small><div class="frm2"><button class="b" id="del">Eliminar mi cuenta</button></div></div>';
+ if(p=="bn"){var f=S.rt>0?Math.min(100,(1-S.req/S.rt)*100):0;return (S.dep==0?'<p>Disponible: <b>100% en tu primer depósito, hasta S/ 500.</b> Rollover x5.</p><div class="frm2"><button class="b g" id="bdp">Depositar y reclamar</button></div>':S.rt>0?'<p>Tu bono está <b>activo</b>. Vence el '+fdate(S.bexp)+'.</p><div class="rol"><small>Rollover: te faltan S/ '+S.req.toFixed(2)+' de S/ '+S.rt.toFixed(2)+'</small><i><u style="width:'+f+'%"></u></i></div>':'<p>Tu bono de bienvenida ya fue utilizado o no se activó en tu primer depósito.</p>')+'<div class="frm2"><a class="b" href="#" data-go="bon" data-sc="tyc" style="text-decoration:none;color:var(--tx)">Ver términos del bono</a></div>'}
+ return ''}
+function perfil(p){if(p){PG=p;var gg=AM.filter(function(x){return x[2]&&x[2].some(function(y){return y[0]==p})})[0];OP=gg?gg[0]:null}$("am2").innerHTML=menu();$("pt").textContent=TT[PG]||"Mi cuenta";$("pg").innerHTML=pgs(PG);saldo()}
+function go(p){if(p=="dpx"){dep();return}if(p=="rtx"){ret();return}if(p=="niv"||p=="tor"){showView("tor");return}document.body.classList.remove("dr");perfil(p)}
+function edit(k){var U=U_(),L={email:"Correo electrónico",tel:"Celular",dir:"Dirección",eq:"Equipo favorito",pep:"Persona expuesta políticamente (PEP)"}[k],v={email:U.email||ME.email,tel:U.tel||"",dir:U.dir||"",eq:U.eq||""}[k]||"",h;
+ if(k=="pep")h='<select id="ei"><option value="">No soy PEP</option><option value="1"'+(U.pep?' selected':'')+'>Soy PEP o familiar de una</option></select>';
+ else if(k=="eq")h='<input id="ei" list="eql" value="'+ea(v)+'" placeholder="Escribe o elige"><datalist id="eql">'+EQ.map(function(x){return '<option>'+x+'</option>'}).join('')+'</datalist>';
+ else h='<input id="ei" value="'+ea(v)+'"'+(k=="tel"?' inputmode="tel" maxlength="9"':'')+'>';
+ if(k=="email")h+='<input id="ei2" type="password" placeholder="Tu contraseña actual">';
+ $("rw_"+k).innerHTML='<div class="edw"><small>'+L+'</small>'+h+'<small class="er" id="eer"></small></div><div class="edb"><button class="b g" data-sv="'+k+'">Guardar</button><button class="b" data-xc="1">Cancelar</button></div>'}
+async function sv(k){var U=U_(),v=$("ei")?$("ei").value.trim():"",er=function(t){$("eer").textContent=t};
+ if(k=="pw"){var o=$("pw0").value,a=$("pw1").value;
+  if(await hs(U.email+"|"+o)!==U.pass)return er("La contraseña actual no es correcta.");
+  if(a.length<8||!/\d/.test(a)||!/[A-Za-z]/.test(a))return er("La nueva contraseña debe tener 8+ caracteres, con letras y números.");
+  if(a!==$("pw2").value)return er("Las contraseñas no coinciden.");
+  U.pass=await hs(U.email+"|"+a);usave();toast("Contraseña actualizada");perfil();return}
+ if(k=="pref"){var m=parseFloat($("pst").value);if(!(m>=1))return;S.pref.st=m;$("st").value=m;slip();save();toast("Preferencias guardadas");perfil();return}
+ if(k=="lim"){S.lim=Math.max(0,parseFloat($("lim").value)||0);save();toast(S.lim?"Límite diario: S/ "+S.lim:"Límite eliminado");perfil();return}
+ if(k=="cv"){U.cv=1;usave();toast("Correo verificado (simulado)");perfil();return}
+ if(k=="email"){var em=v.toLowerCase();
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em))return er("Escribe un correo válido.");
+  if(USERS.some(function(x){return x.email==em&&x.id!=ME.id}))return er("Ese correo ya está en uso.");
+  var pw=$("ei2").value;if(await hs((U.email||ME.email)+"|"+pw)!==U.pass)return er("Contraseña incorrecta.");
+  U.pass=await hs(em+"|"+pw);U.email=em;U.cv=0;ME.email=em;try{localStorage.setItem("bb_me",JSON.stringify(ME))}catch(x){}}
+ else if(k=="tel"){var t=v.replace(/\s/g,"");
+  if(!/^9\d{8}$/.test(t))return er("Debe tener 9 dígitos y empezar con 9.");
+  if(USERS.some(function(x){return x.tel==t&&x.id!=ME.id}))return er("Ese celular ya está registrado.");
+  PR={chg:"tel",tel:t};sms();authOpen("vf","Ingresa el código que enviamos a tu nuevo celular.");return}
+ else if(k=="dir"){if(v.length<5)return er("Escribe tu dirección completa.");U.dir=v}
+ else if(k=="eq")U.eq=v;
+ else if(k=="pep")U.pep=v?1:0;
+ usave();perfil()}
+document.addEventListener("click",function(e){
+ if(e.target.id=="bk2"){document.body.classList.remove("dr");return}
+ var t=e.target.closest("button");if(!t)return;
+ if(t.dataset.g){var g=t.dataset.g,gr=AM.filter(function(x){return x[0]==g})[0];if(gr[2]){OP=OP==g?null:g;$("am2").innerHTML=menu()}else go(g)}
+ else if(t.dataset.q)go(t.dataset.q);
+ else if(t.dataset.ed)edit(t.dataset.ed);
+ else if(t.dataset.xc)perfil();
+ else if(t.dataset.sv)sv(t.dataset.sv);
+ else if(t.dataset.ax){S.ex=Date.now()+(+t.dataset.ax)*864e5;save();toast("Autoexclusión activada hasta el "+fdate(S.ex));perfil()}
+ else if(t.id=="mb")document.body.classList.add("dr");
+ else if(t.id=="px")showView("dep");
+ else if(t.id=="dpb2")dep();
+});
+document.addEventListener("change",function(e){if(e.target.id=="pmk"){var U=U_();U.mk=e.target.checked;usave()}});
+
+/* ===== OPCIÓN B: RETOS DE LA SEMANA ===== */
+var MW=[["Haz 10 apuestas","bets",10,120],["Acierta 3 apuestas","wins",3,150],["Juega en 3 deportes distintos","sp",3,100],["Arma una combinada de 4 o más selecciones","combo4",1,120],["Apuesta S/ 300 en total","vol",300,150]];
+function wkVal(m){return m[1]=="sp"?S.wk.sp.length:S.wk[m[1]]}
+function wkAdd(n,st){var w=S.wk;w.bets++;w.vol+=st;if(n>=4)w.combo4++;w.days[(new Date().getDay()+6)%7]=1;
+ Object.keys(picks).forEach(function(id){var m=Mx.filter(function(x){return x.id==id})[0];if(m&&w.sp.indexOf(m.s)<0)w.sp.push(m.s)});return wkCheck()}
+function wkCheck(){var w=S.wk,msg=[];
+ MW.forEach(function(m,i){if(w.cl.indexOf(i)<0&&wkVal(m)>=m[2]){w.cl.push(i);S.xp+=m[3];msg.push("Reto semanal cumplido +"+m[3]+" XP")}});
+ var c=w.cl.length;
+ if(c>=3&&w.ch<1){w.ch=1;S.bal+=10;acc("promo",10);mov("Cofre semanal",10);msg.push("¡Cofre semanal! +S/ 10")}
+ if(c>=5&&w.ch<2){w.ch=2;S.bal+=30;acc("promo",30);mov("Cofre dorado",30);msg.push("¡Cofre dorado! +S/ 30")}
+ if(w.days.every(Boolean)&&!w.rk){w.rk=1;S.xp+=200;msg.push("¡Racha de 7 días! +200 XP")}
+ return msg}
+function wkR(){var w=S.wk,di=(new Date().getDay()+6)%7,dn=["L","M","M","J","V","S","D"],dl=["Lun","Mar","Mié","Jue","Vie","Sáb","Dom"];
+ $("wk_d").innerHTML=w.days.map(function(x,i){return '<div class="dy'+(x?' ok':'')+(i==di?' hoy':'')+'"><span>'+(x?'✓':dn[i])+'</span><small>'+dl[i]+'</small></div>'}).join('');
+ $("wk_m").innerHTML=MW.map(function(m,i){var v=Math.min(wkVal(m),m[2]),d=w.cl.indexOf(i)>-1;return '<div class="ms'+(d?' ok':'')+'"><b>'+m[0]+'</b><i><u style="width:'+(v/m[2]*100)+'%"></u></i><small>'+(m[1]=="vol"?"S/ "+v.toFixed(0)+" de S/ "+m[2]:v+" de "+m[2])+' · '+(d?'Completado':'+'+m[3]+' XP')+'</small></div>'}).join('');
+ var c=w.cl.length;
+ $("wk_c").innerHTML='<div class="cf'+(c>=3?' ok':'')+'"><b>Cofre semanal</b><small>3 retos: +S/ 10</small></div><div class="cf'+(c>=5?' ok':'')+'"><b>Cofre dorado</b><small>5 retos: +S/ 30</small></div><div class="cf'+(w.rk?' ok':'')+'"><b>Racha de 7 días</b><small>Apuesta cada día: +200 XP</small></div>';
+ $("wk_t").textContent="Se reinicia el lunes · "+c+" de 5 retos"}
+document.addEventListener("click",function(e){var t=e.target.closest("button");if(!t||!t.dataset.t)return;
+ $("tA").hidden=t.dataset.t!="a";$("tB").hidden=t.dataset.t!="b";
+ document.querySelectorAll("#tt button").forEach(function(b){b.classList.toggle("on",b==t)})});
+
+/* ===== RECOMPENSAS, RETIROS Y TEMA ===== */
+var FBON=false,BSON=false;
+function wkKey(){var d=new Date();return new Date(d-((d.getDay()+6)%7)*864e5).toLocaleDateString("en-CA")}
+function cbPct(){var n=nivel(S.xp);return n>=4?10:n>=2?5:0}
+function bsAvail(){return nivel(S.xp)>=3&&S.bu!=wkKey()}
+function fbList(){S.fb=(S.fb||[]).filter(function(f){return f.exp>Date.now()});return S.fb}
+function fbAdd(a,src,d){S.fb.push({a:a,src:src,exp:Date.now()+d*864e5})}
+function grant(){var n=nivel(S.xp),msg=[],mk=new Date().toISOString().slice(0,7);
+ for(var i=(S.fg==null?-1:S.fg)+1;i<=n;i++){
+  if(i==0){fbAdd(10,"Nivel 1: "+LV[0][0],7);msg.push("Recibiste una apuesta gratis de S/ 10. Úsala en el boleto antes de apostar.")}
+  else if(i==1){fbAdd(20,"Nivel 2: "+LV[1][0],7);msg.push("Recibiste una apuesta gratis de S/ 20.")}
+  else msg.push("Desbloqueaste: "+LV[i][2]+".")}
+ S.fg=n;
+ if(n>=4&&S.fm!=mk){S.fm=mk;fbAdd(100,"Nivel Leyenda (mensual)",30);msg.push("Apuesta gratis mensual de S/ 100.")}
+ if(msg.length)save();
+ return msg}
+function rewR(){var h="",f=ME?fbList():[],b=ME&&bsAvail();
+ if(f.length)h+='<label class="ck2"><input type="checkbox" id="fbc"'+(FBON?' checked':'')+'> Usar apuesta gratis de S/ '+f[0].a+(f.length>1?' (+'+(f.length-1)+' más)':'')+'</label>';
+ if(b)h+='<label class="ck2"><input type="checkbox" id="bstc"'+(BSON?' checked':'')+'> Usar cuota potenciada +10% (1 por semana)</label>';
+ $("rwd").innerHTML=h;$("rwd").hidden=!h}
+document.addEventListener("change",function(e){
+ if(e.target.id=="fbc"){FBON=e.target.checked;if(!FBON)$("st").value=(S.pref&&S.pref.st)||30;slip()}
+ else if(e.target.id=="bstc"){BSON=e.target.checked;slip()}
+ else if(e.target.id=="wmt")wfields()});
+function wfields(){var m=$("wmt").value,U=U_();
+ $("wf").innerHTML=m=="Transferencia bancaria"?'<label>Banco<select id="wf2"><option>BCP</option><option>Interbank</option><option>BBVA</option><option>Scotiabank</option><option>Banco de la Nación</option><option>Otro banco</option></select></label><label>Número de cuenta<input id="wf1" inputmode="numeric" maxlength="18" placeholder="Solo números, sin guiones"></label><small class="mu">La cuenta debe estar a tu nombre: '+esc(ME.name)+'.</small>':'<label>Celular de tu cuenta '+m+'<input id="wf1" inputmode="tel" maxlength="9" value="'+ea(U.tel||"")+'"></label><small class="mu">La cuenta debe estar a tu nombre: '+esc(ME.name)+'.</small>'}
+function ret(){if(!ME){authOpen("in","Ingresa para retirar.");return}
+ $("wer").textContent="";$("wa").value="";$("wbc").checked=false;wfields();
+ $("wsm").innerHTML='<div class="wal"><div><small>Disponible para retirar</small><b>S/ '+S.bal.toFixed(2)+'</b></div><div><small>Bono (no retirable)</small><b>S/ '+S.bono.toFixed(2)+'</b></div></div>'+(need()>0.005?'<p class="er" style="margin:10px 0 0">Para retirar debes apostar el 100% de tus depósitos. Te faltan S/ '+need().toFixed(2)+' por apostar.</p>':'')+(S.bal<50?'<p class="er" style="margin:10px 0 0">Aún no tienes fondos suficientes para retirar. El mínimo es S/ 50 por Yape, Plin o transferencia bancaria.</p>':'');
+ $("wbw").hidden=!(S.rt>0);if(!$("wd").open)$("wd").showModal()}
+function retirar(){var a=parseFloat($("wa").value)||0,m=$("wmt").value,U=U_(),f=($("wf1").value||"").replace(/\s/g,""),er=function(t){$("wer").textContent=t};
+ if(!U.cv)return er("Verifica tu correo en Mi perfil > Verificación para poder retirar.");
+ if(S.bal<50)return er("Aún no tienes fondos suficientes para retirar. El mínimo es S/ 50.");
+ if(a<50)return er("El retiro mínimo es S/ 50.");
+ if(need()>0.005)return er("Para retirar debes apostar el 100% de tus depósitos. Te faltan S/ "+need().toFixed(2)+" por apostar.");
+ if(a>S.bal+1e-9)return er("No puedes retirar más de tu saldo disponible (S/ "+S.bal.toFixed(2)+").");
+ if(m=="Transferencia bancaria"){if(!/^\d{10,18}$/.test(f))return er("Escribe tu número de cuenta del "+$("wf2").value+" (solo números, entre 10 y 18 dígitos).")}else if(!/^9\d{8}$/.test(f))return er("El celular debe tener 9 dígitos y empezar con 9.");
+ if(S.rt>0&&!$("wbc").checked)return er("Confirma que entiendes que perderás tu bono si retiras ahora.");
+ var bkn=m=="Transferencia bancaria"?" · "+$("wf2").value:"";S.bal-=a;acc("ret",a);mov("Retiro ("+m+bkn+")",-a);
+ if(S.rt>0){mov("Bono cancelado por retiro",-S.bono);S.bono=0;S.req=0;S.rt=0}
+ save();saldo();$("wd").close();
+ toast("Retiro de S/ "+a.toFixed(2)+" solicitado por "+m+". Llega en menos de 24 horas (simulado).");
+ if(!$("v-per").hidden)perfil()}
+var MOON='<svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>',SUN='<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+function tema(d,sv){document.documentElement.dataset.th=d?"d":"l";var m=document.querySelector('meta[name="color-scheme"]');if(m)m.content=d?"only dark":"only light";
+ $("th").innerHTML=d?SUN+'<span>Claro</span>':MOON+'<span>Oscuro</span>';if(sv){try{localStorage.setItem("bb_th",d?"d":"l")}catch(e){}}}
+tema(document.documentElement.dataset.th=="d");
+document.addEventListener("click",function(e){var t=e.target.closest("button");if(!t)return;
+ if(t.id=="th")tema(document.documentElement.dataset.th!="d",1);
+ else if(t.dataset.rt)ret();
+ else if(t.id=="wx")$("wd").close();
+ else if(t.id=="wok")retirar()});
+
+/* ===== REFERIDOS Y CONTADORES PARA AFILIADOS ===== */
+(function(){try{var q=new URLSearchParams(location.search).get("ref");if(q)localStorage.setItem("bb_ref",JSON.stringify({c:q.toUpperCase().replace(/[^A-Z0-9]/g,"").slice(0,15),t:Date.now()}))}catch(e){}})();
+function AFFL(){try{return JSON.parse(localStorage.getItem("bb_aff")||"[]")}catch(e){return[]}}
+function refc(){try{var r=JSON.parse(localStorage.getItem("bb_ref")||"null");return r&&Date.now()-r.t<30*864e5?r.c:""}catch(e){return""}}
+function codeOk(c){var A=AFFL();return !A.length||A.some(function(a){return a.code==c&&a.on!==false})}
+function acc(k,v){S.ac=S.ac||{};S.ac[k]=(S.ac[k]||0)+v}
+authUI();
+car();list();slip();cargarAPI();ox();if(ODDS_KEY)cargarDeportes();xpInit();
 </script></body></html>
